@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on Code My Life</title>
+    <link>https://wsmao.github.io/tags/website/</link>
+    <description>Recent content in Website on Code My Life</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 15 Nov 2024 16:50:47 +0800</lastBuildDate>
+    <atom:link href="https://wsmao.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chris Post his first article, congrates!</title>
+      <link>https://wsmao.github.io/blog/mypost/</link>
+      <pubDate>Fri, 15 Nov 2024 16:50:47 +0800</pubDate>
+      <guid>https://wsmao.github.io/blog/mypost/</guid>
+      <description>&lt;h3 id=&#34;how-good-hugo-is-&#34;&gt;How good HUGO is ?&lt;/h3&gt;&#xA;&lt;p&gt;I want to write so bad.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Liva | Personal blog template</title>
+    <title>Categories on Code My Life</title>
     <link>https://wsmao.github.io/categories/</link>
-    <description>Recent content in Categories on Liva | Personal blog template</description>
+    <description>Recent content in Categories on Code My Life</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 29 Oct 2019 10:07:47 +0600</lastBuildDate>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 15 Nov 2024 16:50:47 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 30 Days</title>
+      <link>https://wsmao.github.io/categories/hugo-30-days/</link>
+      <pubDate>Fri, 15 Nov 2024 16:50:47 +0800</pubDate>
+      <guid>https://wsmao.github.io/categories/hugo-30-days/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Android and Gaming</title>
       <link>https://wsmao.github.io/categories/android-and-gaming/</link>
@@ -20,34 +27,6 @@
       <link>https://wsmao.github.io/categories/go-language/</link>
       <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
       <guid>https://wsmao.github.io/categories/go-language/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTML</title>
-      <link>https://wsmao.github.io/categories/html/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/categories/html/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTML &amp; CSS</title>
-      <link>https://wsmao.github.io/categories/html--css/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/categories/html--css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programming Language</title>
-      <link>https://wsmao.github.io/categories/programming-language/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/categories/programming-language/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://wsmao.github.io/categories/python/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/categories/python/</guid>
       <description></description>
     </item>
     <item>
