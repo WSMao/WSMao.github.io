@@ -4,7 +4,7 @@
     <title>Website on Code My Life</title>
     <link>https://wsmao.github.io/tags/website/</link>
     <description>Recent content in Website on Code My Life</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 15 Nov 2024 16:50:47 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://wsmao.github.io/blog/mypost/</link>
       <pubDate>Fri, 15 Nov 2024 16:50:47 +0800</pubDate>
       <guid>https://wsmao.github.io/blog/mypost/</guid>
-      <description>How good HUGO is ? I want to write so bad.</description>
+      <description>&lt;h3 id=&#34;how-good-hugo-is-&#34;&gt;How good HUGO is ?&lt;/h3&gt;&#xA;&lt;p&gt;I want to write so bad.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
