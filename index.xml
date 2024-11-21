@@ -6,21 +6,28 @@
     <description>Recent content on Code My Life</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 15 Nov 2024 16:50:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2024 13:00:00 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About hugo series.</title>
+      <link>https://wsmao.github.io/hugo/about-hugo-series/</link>
+      <pubDate>Thu, 21 Nov 2024 13:00:00 +0800</pubDate>
+      <guid>https://wsmao.github.io/hugo/about-hugo-series/</guid>
+      <description>&lt;h3 id=&#34;用-hugo-架站寫-hugo-系列文章&#34;&gt;用 HUGO 架站寫 HUGO 系列文章&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;既然使用了 HUGO 架站，那首要可以寫的內容必然是使用 HUGO 的一些過程分享。&lt;/li&gt;&#xA;&lt;li&gt;架設本站的目的只是讓自己的學習經驗也能夠分享出去，不要局限於個人。&lt;/li&gt;&#xA;&lt;li&gt;所謂教學相長，希望能幫助到別人同時也回饋給自己。&lt;/li&gt;&#xA;&lt;li&gt;本系列無章會分以下章節&#xA;&lt;ul&gt;&#xA;&lt;li&gt;初階概念篇，是寫給想要有自己的 blog，想免費架站寫文章分享的人。&lt;/li&gt;&#xA;&lt;li&gt;進階概念篇，主要是寫給想要改出自己喜歡的網站版型的使用者。&lt;/li&gt;&#xA;&lt;li&gt;實戰篇，則是呈現目前該 blog 是如何架設的，希望能透過一步步的實作過程，串起前兩個篇章的觀念。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>This is test file</title>
+      <link>https://wsmao.github.io/test/test/</link>
+      <pubDate>Wed, 20 Nov 2024 13:49:23 +0600</pubDate>
+      <guid>https://wsmao.github.io/test/test/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Chris Post his first article, congrates!</title>
       <link>https://wsmao.github.io/blog/mypost/</link>
       <pubDate>Fri, 15 Nov 2024 16:50:47 +0800</pubDate>
       <guid>https://wsmao.github.io/blog/mypost/</guid>
       <description>&lt;h3 id=&#34;how-good-hugo-is-&#34;&gt;How good HUGO is ?&lt;/h3&gt;&#xA;&lt;p&gt;I want to write so bad.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>This is test file</title>
-      <link>https://wsmao.github.io/test/test/</link>
-      <pubDate>Tue, 29 Oct 2019 13:49:23 +0600</pubDate>
-      <guid>https://wsmao.github.io/test/test/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea&lt;/p&gt;</description>
     </item>
     <item>
       <title>How To Use Checklists To Improve Your UX</title>
