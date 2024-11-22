@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Code My Life</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 21 Nov 2024 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2024 14:29:29 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quote</title>
+      <link>https://wsmao.github.io/tags/quote/</link>
+      <pubDate>Fri, 22 Nov 2024 14:29:29 +0800</pubDate>
+      <guid>https://wsmao.github.io/tags/quote/</guid>
+      <description></description>
+    </item>
     <item>
       <title>HUGO</title>
       <link>https://wsmao.github.io/tags/hugo/</link>

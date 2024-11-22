@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wsmao.github.io/</loc>
+    <lastmod>2024-11-22T14:29:29+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/quote/unknown---live_beautifully/</loc>
+    <lastmod>2024-11-22T14:29:29+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/quote/</loc>
+    <lastmod>2024-11-22T14:29:29+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/</loc>
+    <lastmod>2024-11-22T14:29:29+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/quote/</loc>
+    <lastmod>2024-11-22T13:47:23+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/quote/nastia_liukin---you_can_quit_but_not_today/</loc>
+    <lastmod>2024-11-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://wsmao.github.io/hugo/about-hugo-series/</loc>
     <lastmod>2024-11-21T13:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://wsmao.github.io/</loc>
-    <lastmod>2024-11-21T13:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://wsmao.github.io/tags/hugo/</loc>
-    <lastmod>2024-11-21T13:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/</loc>
     <lastmod>2024-11-21T13:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/test/</loc>
@@ -33,12 +45,9 @@
     <lastmod>2024-11-15T16:50:47+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/hugo/</loc>
-    <lastmod>2024-10-29T13:49:23+06:00</lastmod>
+    <lastmod>2024-10-29T13:49:23+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/about/</loc>
-    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/blog/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/contact/</loc>
@@ -46,6 +55,9 @@
   </url><url>
     <loc>https://wsmao.github.io/search/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/blog/</loc>
+    <lastmod>2019-10-29T13:49:23+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/categories/android-and-gaming/</loc>
     <lastmod>2019-10-29T10:07:47+06:00</lastmod>
