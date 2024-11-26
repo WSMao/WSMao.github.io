@@ -3,12 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wsmao.github.io/</loc>
-    <lastmod>2024-11-25T18:14:33+08:00</lastmod>
+    <lastmod>2024-11-26T15:12:07+08:00</lastmod>
   </url><url>
-    <loc>https://wsmao.github.io/tags/quote/</loc>
-    <lastmod>2024-11-25T18:14:33+08:00</lastmod>
+    <loc>https://wsmao.github.io/tags/focus/</loc>
+    <lastmod>2024-11-26T15:12:07+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/tags/</loc>
+    <lastmod>2024-11-26T15:12:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/blog/%E5%B0%88%E6%B3%A8%E5%8A%9B%E4%BF%AE%E7%85%89/</loc>
+    <lastmod>2024-11-26T15:12:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/blog/%E8%AA%8D%E8%AD%98%E8%87%AA%E5%B7%B1/</loc>
+    <lastmod>2024-11-26T13:27:32+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/quote/</loc>
     <lastmod>2024-11-25T18:14:33+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/quote/%E7%A8%9A%E6%9A%89%E5%90%9B---%E9%82%8A%E6%89%93%E4%BB%97%E9%82%8A%E5%AD%B8%E7%BF%92/</loc>
@@ -35,18 +44,6 @@
     <loc>https://wsmao.github.io/test/test/</loc>
     <lastmod>2024-11-20T13:49:23+06:00</lastmod>
   </url><url>
-    <loc>https://wsmao.github.io/categories/</loc>
-    <lastmod>2024-11-15T16:50:47+08:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/blog/mypost/</loc>
-    <lastmod>2024-11-15T16:50:47+08:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/categories/hugo-30-days/</loc>
-    <lastmod>2024-11-15T16:50:47+08:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/website/</loc>
-    <lastmod>2024-11-15T16:50:47+08:00</lastmod>
-  </url><url>
     <loc>https://wsmao.github.io/hugo/</loc>
     <lastmod>2024-10-29T13:49:23+08:00</lastmod>
   </url><url>
@@ -62,40 +59,6 @@
     <loc>https://wsmao.github.io/blog/</loc>
     <lastmod>2019-10-29T13:49:23+08:00</lastmod>
   </url><url>
-    <loc>https://wsmao.github.io/categories/android-and-gaming/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/game/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/categories/go-language/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/blog/post-1/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/blog/post-2/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/blog/post-3/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/html/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/new/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/photos/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/python/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/react/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/categories/web-design/</loc>
-    <lastmod>2019-10-29T10:07:47+06:00</lastmod>
+    <loc>https://wsmao.github.io/categories/</loc>
   </url>
 </urlset>

@@ -6,35 +6,21 @@
     <description>Recent content in blog on Code My Life</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 15 Nov 2024 16:50:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2024 15:12:07 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chris Post his first article, congrates!</title>
-      <link>https://wsmao.github.io/blog/mypost/</link>
-      <pubDate>Fri, 15 Nov 2024 16:50:47 +0800</pubDate>
-      <guid>https://wsmao.github.io/blog/mypost/</guid>
-      <description>&lt;h3 id=&#34;how-good-hugo-is-&#34;&gt;How good HUGO is ?&lt;/h3&gt;&#xA;&lt;p&gt;I want to write so bad.&lt;/p&gt;</description>
+      <title>專注力修煉</title>
+      <link>https://wsmao.github.io/blog/%E5%B0%88%E6%B3%A8%E5%8A%9B%E4%BF%AE%E7%85%89/</link>
+      <pubDate>Tue, 26 Nov 2024 15:12:07 +0800</pubDate>
+      <guid>https://wsmao.github.io/blog/%E5%B0%88%E6%B3%A8%E5%8A%9B%E4%BF%AE%E7%85%89/</guid>
+      <description>&lt;p&gt;一直以來，專注力的問題都很困擾著我。我很想專注在某些事情上，但就是很容易分心。&lt;/p&gt;&#xA;&lt;p&gt;我也看過很多關於專注方法的書籍，嘗試過很多方法，但總感覺很容易回到原點。&lt;/p&gt;&#xA;&lt;p&gt;所以，我打算來場專注力的實驗，並在這邊記錄下來，嘗試發現我的問題點，並找到對我有效的方法。&lt;/p&gt;&#xA;&lt;h3 id=&#34;發現&#34;&gt;發現&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;我發現寫作的時候我蠻容易進入心流的。&lt;/li&gt;&#xA;&lt;li&gt;我發現我常常知道 A 是最重要的事情，但我卻做 BCD。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;發現常常早上要工作的時候還沒想好自己要先做什麼每天都在拔河&#34;&gt;發現:常常早上要工作的時候，還沒想好自己要先做什麼，每天都在拔河。&lt;/h3&gt;&#xA;&lt;p&gt;當你給自己太多選擇，你就無法專注。&#xA;畢竟最重要的事情只有一件，不應該還要為該做什麼做出選擇。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>How To Use Checklists To Improve Your UX</title>
-      <link>https://wsmao.github.io/blog/post-1/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/blog/post-1/</guid>
-      <description>&lt;h1 id=&#34;heading-1&#34;&gt;Heading 1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;&#xA;&lt;h4 id=&#34;heading-4&#34;&gt;Heading 4&lt;/h4&gt;&#xA;&lt;h5 id=&#34;heading-5&#34;&gt;Heading 5&lt;/h5&gt;&#xA;&lt;h6 id=&#34;heading-6&#34;&gt;Heading 6&lt;/h6&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h5 id=&#34;emphasis&#34;&gt;Emphasis&lt;/h5&gt;&#xA;&lt;p&gt;Emphasis, aka italics, with &lt;em&gt;asterisks&lt;/em&gt; or &lt;em&gt;underscores&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How To Use Checklists To Improve Your UX</title>
-      <link>https://wsmao.github.io/blog/post-2/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/blog/post-2/</guid>
-      <description>&lt;h1 id=&#34;heading-1&#34;&gt;Heading 1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;&#xA;&lt;h4 id=&#34;heading-4&#34;&gt;Heading 4&lt;/h4&gt;&#xA;&lt;h5 id=&#34;heading-5&#34;&gt;Heading 5&lt;/h5&gt;&#xA;&lt;h6 id=&#34;heading-6&#34;&gt;Heading 6&lt;/h6&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h5 id=&#34;emphasis&#34;&gt;Emphasis&lt;/h5&gt;&#xA;&lt;p&gt;Emphasis, aka italics, with &lt;em&gt;asterisks&lt;/em&gt; or &lt;em&gt;underscores&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How To Use Checklists To Improve Your UX</title>
-      <link>https://wsmao.github.io/blog/post-3/</link>
-      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>https://wsmao.github.io/blog/post-3/</guid>
-      <description>&lt;h1 id=&#34;heading-1&#34;&gt;Heading 1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;&#xA;&lt;h4 id=&#34;heading-4&#34;&gt;Heading 4&lt;/h4&gt;&#xA;&lt;h5 id=&#34;heading-5&#34;&gt;Heading 5&lt;/h5&gt;&#xA;&lt;h6 id=&#34;heading-6&#34;&gt;Heading 6&lt;/h6&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h5 id=&#34;emphasis&#34;&gt;Emphasis&lt;/h5&gt;&#xA;&lt;p&gt;Emphasis, aka italics, with &lt;em&gt;asterisks&lt;/em&gt; or &lt;em&gt;underscores&lt;/em&gt;.&lt;/p&gt;</description>
+      <title>認識自己</title>
+      <link>https://wsmao.github.io/blog/%E8%AA%8D%E8%AD%98%E8%87%AA%E5%B7%B1/</link>
+      <pubDate>Tue, 26 Nov 2024 13:27:32 +0800</pubDate>
+      <guid>https://wsmao.github.io/blog/%E8%AA%8D%E8%AD%98%E8%87%AA%E5%B7%B1/</guid>
+      <description>&lt;p&gt;用一個旁觀者的角度，主動去意識自己的行為，進而了解自己，探索自己。&lt;/p&gt;&#xA;&lt;h3 id=&#34;愛寫的我&#34;&gt;愛寫的我&lt;/h3&gt;&#xA;&lt;p&gt;我很愛寫，因為寫的時候就是我思考的時候。當我整理我的思緒，搞懂一些事情的時候，那種自我提升、進步的感覺是非常愉悅的。&lt;/p&gt;&#xA;&lt;p&gt;當有一堆想法的時候，我喜歡寫出來，當我寫出來我才發現這是零碎且混亂的。&#xA;我的大腦是如此有趣，一次只能想一件事情，但下一刻想的事情卻可能是此時此刻想也想不到的。&#xA;此時我可以利用筆記，它就像是我擴充的記憶體，我可以把所有想法載入，這樣我就可以同時看到這些想法。&#xA;更有趣的是，這時我就可以用第三者的視角來看自己腦中的想法。&#xA;我可以看到這些想法或許很有趣，或許是亂的無組織的，也可能根本是錯誤的。&#xA;然後我就可以跟自己對話，問自己問題，重新去組織，調整這些想法，產生新的想法。&lt;/p&gt;&#xA;&lt;p&gt;這種作法也適用於學習，當學習之後，我也喜歡寫出我的心得。&#xA;這過程中，我得思考要怎麼寫出來，故得先理一理我的思緒，伴隨修改的過程中，逐漸理出比較清晰的概念。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
