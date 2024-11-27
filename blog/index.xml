@@ -6,10 +6,17 @@
     <description>Recent content in blog on Code My Life</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 27 Nov 2024 09:49:54 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 13:51:33 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>前澤友作 — 不一樣的人生</title>
+      <title>字符的旅程</title>
+      <link>https://wsmao.github.io/blog/website_with_utf-8/</link>
+      <pubDate>Wed, 27 Nov 2024 13:51:33 +0800</pubDate>
+      <guid>https://wsmao.github.io/blog/website_with_utf-8/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%AD%97%E7%AC%A6%E7%9A%84%E7%B7%A8%E8%A7%A3%E7%A2%BC&#34;&gt;字符的編、解碼&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E4%BD%95%E8%AC%82-unicode-utf-8-%E6%98%AF&#34;&gt;何謂 Unicode? UTF-8 是?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%AD%97%E5%BD%A2%E5%BA%AB&#34;&gt;字形庫&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E7%89%B9%E6%AE%8A%E7%AC%A6%E8%99%9F%E7%9A%84%E4%BD%BF%E7%94%A8&#34;&gt;特殊符號的使用&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#htmlcssjavascript-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-unicode&#34;&gt;HTML、CSS、JavaScript 如何使用 Unicode&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E7%B7%A8%E7%A2%BC%E7%9A%84%E8%A8%AD%E5%AE%9A&#34;&gt;編碼的設定&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%AF%A6%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B6%B2%E7%AB%99&#34;&gt;實用的工具網站&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;字符的編解碼&#34;&gt;字符的編、解碼&lt;/h3&gt;&#xA;&lt;p&gt;對於電腦而言，每個字符不過是用一串的編碼來表示，比如英文小寫字符 &amp;lsquo;a&amp;rsquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>前澤友作 — 不走平凡路</title>
       <link>https://wsmao.github.io/blog/starttoday/</link>
       <pubDate>Wed, 27 Nov 2024 09:49:54 +0800</pubDate>
       <guid>https://wsmao.github.io/blog/starttoday/</guid>
