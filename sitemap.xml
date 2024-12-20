@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wsmao.github.io/tags/555-ic/</loc>
-    <lastmod>2024-12-10T13:35:00+08:00</lastmod>
+    <loc>https://wsmao.github.io/tags/arduino/</loc>
+    <lastmod>2024-12-20T11:12:10+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/blog/arduino_burn_bootloader/</loc>
+    <lastmod>2024-12-20T11:12:10+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/</loc>
+    <lastmod>2024-12-20T11:12:10+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/</loc>
+    <lastmod>2024-12-20T11:12:10+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/science/</loc>
+    <lastmod>2024-12-18T14:19:09+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/blog/%E7%A5%9E%E5%A5%87%E7%9A%84%E7%A3%81%E5%8A%9B/</loc>
+    <lastmod>2024-12-18T14:19:09+08:00</lastmod>
+  </url><url>
+    <loc>https://wsmao.github.io/tags/555-ic/</loc>
     <lastmod>2024-12-10T13:35:00+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/tags/electronics/</loc>
@@ -15,9 +30,6 @@
     <lastmod>2024-12-10T13:35:00+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/tags/oscillator/</loc>
-    <lastmod>2024-12-10T13:35:00+08:00</lastmod>
-  </url><url>
-    <loc>https://wsmao.github.io/tags/</loc>
     <lastmod>2024-12-10T13:35:00+08:00</lastmod>
   </url><url>
     <loc>https://wsmao.github.io/blog/%E5%88%9D%E6%8E%A2_555-ic/</loc>

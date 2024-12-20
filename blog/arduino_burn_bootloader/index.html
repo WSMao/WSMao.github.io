@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Code My Life</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Arduino as ISP，為其他 Arduino 燒錄 bootloader">
+  <meta name="author" content="Chris">
+    
+  
+  <meta name="theme-name" content="liva-hugo" />
+  
+  <meta name="generator" content="Hugo 0.139.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wsmao.github.io/images/favicon.png " type="image/x-icon" sizes="32x32">
+  <link rel="icon" href="https://wsmao.github.io/images/favicon.png " type="image/png" sizes="32x32">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://wsmao.github.io/"><img class="img-fluid"
+          src="https://wsmao.github.io/images/logo.svg" alt="Code My Life"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/blog/">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/hugo/">Hugo</a>
+          </li>
+          
+          
+        </ul>
+        
+        
+        <a class="navbar-brand mx-auto desktop-view" href="https://wsmao.github.io/"><img class="img-fluid"
+            src="https://wsmao.github.io/images/logo.svg" alt="Code My Life"></a>
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/tags/">Tags</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://wsmao.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
+        <h2>AVR Programmer &amp; Arduino Bootloader</h2>
+        <div class="mb-3 post-meta">
+          <span>By Chris</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>20 December 2024</span>
+          
+        </div>
+        
+        <div class="content mb-5">
+          <ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a>
+<ul>
+<li><a href="#bootloader">bootloader</a></li>
+<li><a href="#%E4%BD%95%E8%AC%82-avr-programmer">何謂 AVR Programmer</a></li>
+<li><a href="#%E4%BD%95%E8%AC%82-isp">何謂 ISP</a></li>
+<li><a href="#%E7%87%92%E9%8C%84%E7%9A%84%E6%AD%A5%E9%A9%9F-quick-preview">燒錄的步驟 quick preview</a></li>
+</ul>
+</li>
+<li><a href="#arduino-ide-%E9%81%B8%E5%96%AE%E6%93%8D%E4%BD%9C-%E7%87%92%E9%8C%84-bootloader-%E8%88%87-%E4%B8%8A%E5%82%B3-sketch">Arduino IDE 選單操作: 燒錄 bootloader 與 上傳 Sketch</a>
+<ul>
+<li><a href="#%E9%81%B8%E6%93%87%E7%9B%AE%E6%A8%99%E6%9D%BF%E5%8F%8A%E8%88%87%E9%9B%BB%E8%85%A6%E9%80%9A%E8%A8%8A%E7%9A%84-port">選擇目標板及與電腦通訊的 Port</a></li>
+<li><a href="#%E7%87%92%E9%8C%84-bootloader-%E5%8F%AA%E8%83%BD%E9%80%8F%E9%81%8E-programmer">燒錄 Bootloader (只能透過 Programmer)</a></li>
+<li><a href="#%E4%B8%80%E8%88%AC%E7%9A%84-sketch-%E7%A8%8B%E5%BC%8F%E4%B8%8A%E5%82%B3%E6%9C%89%E5%85%A9%E7%A8%AE%E6%96%B9%E5%BC%8F">一般的 sketch 程式上傳有兩種方式</a></li>
+</ul>
+</li>
+<li><a href="#arduino-as-isp">Arduino as ISP</a></li>
+<li><a href="#%E7%82%BA%E7%9B%AE%E6%A8%99-ic-%E6%90%AD%E5%BB%BA%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E9%9B%BB%E8%B7%AF">為目標 IC 搭建基本工作電路</a>
+<ul>
+<li><a href="#%E5%88%A9%E7%94%A8%E6%89%8B%E9%82%8A%E7%9A%84-arduino-uno-%E6%9D%BF%E5%AD%90">利用手邊的 Arduino UNO 板子</a></li>
+<li><a href="#%E7%94%A8%E9%BA%B5%E5%8C%85%E7%89%88%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E9%9B%BB%E8%B7%AF">用麵包版搭建工作電路</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B7%9A%E8%B7%AF%E9%80%A3%E6%8E%A5">線路連接</a></li>
+<li><a href="#%E6%B8%AC%E8%A9%A6-bootloader-%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C">測試 Bootloader 是否正常工作</a>
+<ul>
+<li><a href="#%E7%94%A8%E7%8F%BE%E6%88%90-arduino-uno-%E6%9D%BF%E5%AD%90">用現成 Arduino UNO 板子</a></li>
+<li><a href="#%E7%94%A8-usb2uart-%E6%9D%BF%E5%AD%90">用 USB2UART 板子</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B5%90%E8%AB%96">結論</a></li>
+</ul>
+<h1 id="前言">前言</h1>
+<p>當我們透過 Arduino 用 USB 上傳燒錄撰寫好的程式，可說是一鍵呵成，相當容易。</p>
+<p>這們容易的背後，是如何辦到的呢，原來是每個出廠的 Arduino 都內建了 bootloader 韌體，上電時會先執行 bootloader 這隻程式，再由 bootloader 判斷是要引導執行已燒錄的 sketch 程式，還是使用者正打算上傳新的程式，那就引導程式燒錄上傳。</p>
+<p>這篇文章主要探討怎麼燒錄 bootloader，並且補充相關的知識點:</p>
+<ul>
+<li>何謂 programmer / ISP</li>
+<li>讓 Arduino 變成 Programmer</li>
+<li>如何搭建最基本的電路，讓 Atmel Atmega328p 晶片得以工作。</li>
+<li>Arduino IDE 操作，該怎麼透過 programmer upload sketch / burn bootloader。</li>
+</ul>
+<h3 id="bootloader">bootloader</h3>
+<p>bootloader 顧名思義就是啟動載入器，開機時會優先執行 bootloader 再由它判斷決定下一步做什麼!</p>
+<p>有了 bootloader 你不再需要透過 programmer 燒錄程式，而是使用 USB device 一條線連接到電腦即可。依照不同的 ARduino 板子，bootloader 會以 UART 或是 Native USB 傳送資料，以通訊協議來協調上傳等工作。對 Arduino 基礎使用者來說，只要有一個基本概念，<strong>有了 bootloader 你才能夠透過 USB 一鍵上傳程式</strong>。</p>
+<p>bootloader 帶給使用者很多的方便，他默默地工作者，卻常常被忽略，只有當程式壞掉無法透過 bootloader 引導燒錄，需要更新 bootloader 又或者購買新的主控晶片，我們才有機會去跟 bootloader 打交道。
+在這篇文章裡，我們只需要知道它的重要性，並且知道如果有需要，我們怎麼將 bootloader 燒錄到 AVR 晶片裡!</p>
+<h3 id="何謂-avr-programmer">何謂 AVR Programmer</h3>
+<p>當你拿到全新的板子，若沒有內建 bootloader 的怎麼辦？<strong>此時你只能透過 AVR Programmer 來燒錄</strong>。
+AVR Programmer 是一種 ISP 燒錄器，以 ISP 燒錄 AVR 板子。</p>
+<p>一般人沒有 AVR Programmer 怎麼辦？那就把你身邊的 Arduino 板子變成 ISP 吧！
+只要將手邊其中一塊 Arduino 燒錄 <code>Arduino as ISP</code> 這隻程式，就可以把這塊 Arduino 搖身一變成為 Programmer 呢!</p>
+<h3 id="何謂-isp">何謂 ISP</h3>
+<p>ISP 是 In-System-Programming ，<strong>代表無需將 ROM 從板子上取下，而是直接在板子完整的系統上進行燒錄</strong>。</p>
+<p>AVR 微控制器內部的 ISP 模組設計是基於 SPI 接口。燒錄時，程序數據透過 MOSI（Master Out, Slave In） 傳送到微控制器，並從 MISO（Master In, Slave Out） 回應，時鐘信號由 SCK（Serial Clock） 提供。</p>
+<p>只要將 AVR Programmer 與 Arduino 的 ISP 介面連接即可燒錄。</p>
+<h3 id="燒錄的步驟-quick-preview">燒錄的步驟 quick preview</h3>
+<ol>
+<li>先把 Arduino A 變成 ISP
+<ul>
+<li>打開 <code>File -&gt; Examples -&gt; ArduinoISP</code> 範例，</li>
+<li>選擇 Arduino A 板子，一般燒錄到板子上即可。</li>
+</ul>
+</li>
+<li>再透過 Arduino A 作為 ISP 燒錄另一台 Arduino Ｂ，
+<ul>
+<li>被燒錄的目標板子不用接 USB。Arduino B 由 Arduino A 供電即可。</li>
+<li>到 <code>Tool -&gt; Programmer -&gt; Arduino as ISP</code> ，然後寫好Ｂ的程式，選擇 B 的板子，然後 <code>Sketch -&gt; Upload using programmer</code> 即可。</li>
+</ul>
+</li>
+</ol>
+<h1 id="arduino-ide-選單操作-燒錄-bootloader-與-上傳-sketch">Arduino IDE 選單操作: 燒錄 bootloader 與 上傳 Sketch</h1>
+<p>先介紹一下 Arduino IDE 選單的設定，因為不管是燒錄什麼以及用什麼方式燒錄，都是透過 IDE。</p>
+<h3 id="選擇目標板及與電腦通訊的-port">選擇目標板及與電腦通訊的 Port</h3>
+<ul>
+<li>板子: 選的是目標板，也就是要接收新程式的板子(如果透過 A 板子作為 ISP 燒錄 B 板子，那就要選 B 板子，因為 B 板才是目標板)</li>
+<li>Port: 通訊埠則是目前連接到電腦上的那片 (可能是目標板子 或 ISP 板子 或 USB2UART)</li>
+</ul>
+<h3 id="燒錄-bootloader-只能透過-programmer">燒錄 Bootloader (只能透過 Programmer)</h3>
+<p>以 指定的 Programmer 上傳 bootloader 到目標板子</p>
+<ul>
+<li>需指定 Programmer :(Tools -&gt; Programmer -&gt; &hellip;)</li>
+<li>上傳 (Tools -&gt; Burn Bootloader)</li>
+</ul>
+<h3 id="一般的-sketch-程式上傳有兩種方式">一般的 sketch 程式上傳有兩種方式</h3>
+<ol>
+<li>透過 Bootloader:  (Sketch -&gt; Upload)</li>
+<li>透過 Programmer: (Sketch -&gt; Upload Using Programmer)</li>
+</ol>
+<ul>
+<li>需指定 Programmer :(Tools -&gt; Programmer -&gt; &hellip;)</li>
+</ul>
+<blockquote>
+<p>若用 Programmer 燒錄 Sketch 程式，則 Bootloader 就會被洗掉 (所以看起來用 Programmer 就是整個 Flash 重燒，無法保留 Bootloader 只燒錄 App)。
+因此對於新的 ATmega328p 板子要像 UNO 板子一樣運作的話，還是要燒 Bootloader，然後把 ISP 拿掉，再使用 Bootloader 上傳 Sketch 程式。</p>
+</blockquote>
+<p><img src="/static/images/post/ArduinoIDE_upload_operation.png" alt="">
+<img src="/static/images/post/ArduinoIDE_upload_by_programmer.png" alt=""></p>
+<h1 id="arduino-as-isp">Arduino as ISP</h1>
+<p>若手邊沒有 AVR Programmer，可以找一塊 Arduino 把它變成 ISP Programmer。</p>
+<p>把範例程式 [<code>ArduinoISP.ino</code>](File -&gt; Examples -&gt; ArduinoISP.ino) 燒錄即可。</p>
+<p><strong>建議使用板子上的 ICSP 腳位去連接</strong>，程式基本上不用什麼改動，因為這是硬體 SPI 腳位，而 <code>ArduinoISP.ino</code> 程式也預設使用者是使用 ICSP 腳位做連接。</p>
+<p>然而有些教學會教，可以使用板子上的 11、12、13 去做連接，這是因為 Arduino UNO 板子上這幾隻腳與 ICSP 腳實際是有連通的。
+不過 Arduino Leonardo 並沒有，所以若想使用 Arduino Leonardo as ISP，且想照某些範例使用 11、12、13 這幾隻腳位，也是可以，不過必須在 <code>ArduinoISP.ino</code> 內 uncomment 這一行 <code>// #define USE_OLD_STYLE_WIRING</code>，這樣就可以使用這幾隻腳作為 ISP 腳位了，但是必須知道<strong>這樣實際使用的是 Software SPI，而非 Hardware SPI，所以還是建議不要多此一舉，乖乖地使用 Leonardo 板子上的 ICSP 腳位就好，不用改程式且快又穩</strong>。</p>
+<h1 id="為目標-ic-搭建基本工作電路">為目標 IC 搭建基本工作電路</h1>
+<p>Atmega328p IC 需要最基本的工作電路才可以運作，像是電源、震盪器等等。</p>
+<h3 id="利用手邊的-arduino-uno-板子">利用手邊的 Arduino UNO 板子</h3>
+<p>但如果手邊有另一塊 Arduino UNO 板子，且上面是透過 28 pins 的底座讓 Atmega328p IC 可以插拔的，那就可以直接利用這塊現成電路啦!只要把舊 IC 拔起來，換上目標 Atmega328p 即可。</p>
+<h3 id="用麵包版搭建工作電路">用麵包版搭建工作電路</h3>
+<p>清單:</p>
+<ul>
+<li>振盪器: 8~16 MHz * 1</li>
+<li>電容: 22pF * 2</li>
+</ul>
+<p>[ ] TODO: 待提供電路圖，或者實體照片</p>
+<h1 id="線路連接">線路連接</h1>
+<p>Wiring Example:</p>
+<p>這是 Arduino Mega 對 Arduino Leonardo 燒錄的接線方式，換做其他板子也是一樣。</p>
+<table>
+  <thead>
+      <tr>
+          <th>Programmer (MEGA)</th>
+          <th>Target (Leonardo)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GCC, VCC</td>
+          <td>GCC, VCC</td>
+      </tr>
+      <tr>
+          <td>Digital Pin  10</td>
+          <td>Reset Pin</td>
+      </tr>
+      <tr>
+          <td>ICSP 3 Pins (CLK, MISO, MOSI)</td>
+          <td>ICSP 3 Pins (CLK, MISO, MOSI)</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="/static/images/post/Arduino_as_ISP_Wiring.jpg" alt=""></p>
+<h1 id="測試-bootloader-是否正常工作">測試 Bootloader 是否正常工作</h1>
+<p>基本上 Bootloader 的用處就是可以在未來燒錄 sketch 時免去 Programmer，得以用 USB 連接即可輕鬆上傳。</p>
+<p>Bootloader 會在開機時，檢查是否有程式要上傳，若有則引導 upload，若否則執行原有程式。</p>
+<p>若是要 upload，則由 USB 線跟電腦溝通，讓新的 sketch 得以上傳。</p>
+<h3 id="用現成-arduino-uno-板子">用現成 Arduino UNO 板子</h3>
+<p>只要將燒好 bootloader 的 Atmega328p 放上 Arduino UNO 28 pins 底座，然後用 USB 線嘗試 upload sketch，若可上傳代表 bootloader 運作 ok。</p>
+<h3 id="用-usb2uart-板子">用 USB2UART 板子</h3>
+<p>由於對於 Arduino UNO 而言，Bootloader 其實是透過 UART 腳位接收上傳程式，透過了板上另一顆晶片作為 USB2UART 來與電腦 USB 連接。
+這代表我們可以直接利用外接的 USB2UART 板子，將 USB2UART 的 tx rx 跟 Atmega328p 上的 UART 對接，也要可以順利上傳程式才對(當然這是板子上沒有內建 USB2UART 的作法)!</p>
+<p>上傳程式時，我們還需要對板子 reset，讓板子 reset 後進入 bootloader 引導後續上傳。reset 方式有很多種，UNO 板是用 DTR 訊號自動在上傳時對目標板子做 reset。
+這個自動 reset 機制很酷也很有趣，我想以另一篇文章深入探討。</p>
+<p>總之，我們需要讓 Atmega328p 的 reset pin 在需要的時候接到 low 訊號，使其 reset。
+而我們也可以土炮一點，用一個 reset button 來實現，用一個 NO button 配一個 pull up resistor:</p>
+<ul>
+<li>按下 close 時，short to GND，導致板子 reset</li>
+<li>放開 open 時，pull up to Vcc，維持工作狀態</li>
+</ul>
+<p>這樣在上傳時，記得在對的時間按按鈕，如果 bootloader 順利運作就能上傳成功啦!</p>
+<h1 id="結論">結論</h1>
+<p>通常只有當板子上沒有任何韌體時或者板子韌體毀損或者有特殊需求，才會透過 ISP 燒錄，不然一般只需透過 ISP 燒錄一次 bootloader，以後都用 bootloader 上傳最方便。</p>
+
+        </div>
+
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script>
+  var indexURL = "https://wsmao.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://wsmao.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/mark.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wsmao.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
