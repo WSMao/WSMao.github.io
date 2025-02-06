@@ -10,9 +10,9 @@
     <atom:link href="https://wsmao.github.io/tags/555-ic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>初探 555-IC，小晶片大用途</title>
-      <link>https://wsmao.github.io/blog/%E5%88%9D%E6%8E%A2_555-ic/</link>
+      <link>https://wsmao.github.io/post/%E5%88%9D%E6%8E%A2_555-ic/</link>
       <pubDate>Tue, 10 Dec 2024 13:35:00 +0800</pubDate>
-      <guid>https://wsmao.github.io/blog/%E5%88%9D%E6%8E%A2_555-ic/</guid>
+      <guid>https://wsmao.github.io/post/%E5%88%9D%E6%8E%A2_555-ic/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;&#xA;&lt;p&gt;555 是偉大的 IC，簡單而實用，不時可以看到它的應用出現在生活之中。因此，我想來好好學習有關這顆 IC，做一些實驗以及 Demo 出來玩玩。&lt;/p&gt;&#xA;&lt;p&gt;但凡簡單的東西必不簡單，身為一個電子電路門外漢，我想從一些基本的概念學起，用我的角度來紀錄學習，希望能幫到跟我一樣的電子小白。&lt;/p&gt;&#xA;&lt;h3 id=&#34;緣起&#34;&gt;緣起&lt;/h3&gt;&#xA;&lt;p&gt;其實會研究這個 IC 是因為學習 PLC 的過程中，不斷看到 Univibrator 這個詞。由於 PLC 是可程式化控制器，會提到這個詞大概就是指能夠撰寫 PLC 程式，利用 PLC 元件，使 PLC 控制器做到&lt;strong&gt;振盪器電路&lt;/strong&gt;所做的事情。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Code My Life</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="主要探討 Modbus RTU 及 RS-485 搭配使用，但也粗淺涵蓋如 Modbus TCP、Modbus ASCII 等相關基礎知識。">
+  <meta name="author" content="Chris">
+    
+  
+  <meta name="theme-name" content="Digital-Zen" />
+  
+  <meta name="generator" content="Hugo 0.139.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/x-icon" sizes="32x32">
+  <link rel="icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/png" sizes="32x32">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- highlightjs -->
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/night-owl.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/c.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/cpp.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/python.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/javascript.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/css.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/http.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/markdown.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/json.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/ini.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/shell.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/excel.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/plaintext.min.js"></script>
+
+
+<!-- copy button -->
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+<script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js" onload="hljs.addPlugin(new CopyButtonPlugin());"></script>
+
+<!-- highlight all pre code element -->
+<script defer>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
+</script>
+
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+        
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://wsmao.github.io/"><img class="img-fluid"
+          src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/post/">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/hugo/">Hugo</a>
+          </li>
+          
+          
+        </ul>
+        
+        
+        <a class="navbar-brand mx-auto desktop-view" href="https://wsmao.github.io/"><img class="img-fluid"
+            src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/tags/">Tags</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://wsmao.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        
+        <h1>Modbus-RTU</h1>
+        <div class="mb-3 post-meta">
+          <span>By Chris</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>27 December 2024</span>
+          
+        </div>
+        
+        <div class="content mb-5">
+          <ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#%E5%B9%BE%E7%A8%AE-modbus-%E5%BD%A2%E5%BC%8F-modbus-rtumodbus-asciimodbus-tcp">幾種 Modbus 形式: Modbus-RTU、Modbus-ASCII、Modbus-TCP</a></li>
+<li><a href="#rs-485-%E7%B0%A1%E4%BB%8B">RS-485 簡介</a></li>
+</ul>
+</li>
+<li><a href="#modbus-rtu-%E5%8D%94%E8%AD%B0">Modbus-RTU 協議</a>
+<ul>
+<li><a href="#modbus-frame">Modbus Frame</a></li>
+<li><a href="#function-code">Function Code</a></li>
+<li><a href="#modbus-slave-register-map">Modbus Slave Register Map</a></li>
+<li><a href="#modbus-rtu-%E4%B9%8B%E5%82%B3%E8%BC%B8%E6%99%82%E9%96%93%E9%96%93%E9%9A%94">Modbus RTU 之傳輸時間間隔</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%A6%E6%B8%AC">實測</a>
+<ul>
+<li><a href="#%E6%B8%AC%E8%A9%A6%E7%9B%AE%E7%9A%84%E8%88%87%E6%96%B9%E6%B3%95">測試目的與方法</a></li>
+<li><a href="#%E6%B8%AC%E8%A9%A6%E7%92%B0%E5%A2%83">測試環境</a></li>
+<li><a href="#%E7%B5%90%E6%9E%9C">結果</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BB%B6%E4%BC%B8%E8%A8%8E%E8%AB%96">延伸討論</a>
+<ul>
+<li><a href="#%E7%82%BA%E4%BD%95-modbus-%E4%BD%BF%E7%94%A8-rs-485-%E5%83%85%E6%94%AF%E6%8C%81-32-%E5%80%8B%E8%A8%AD%E5%82%99">為何 Modbus 使用 RS-485 僅支持 32 個設備？</a></li>
+<li><a href="#modbus-ascii-%E5%92%8C-modbus-rtu-%E6%AF%94%E8%BC%83">Modbus ASCII 和 Modbus RTU 比較</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Modbus 是常用的工業總線協議，屬於 Application Layer，工業上常用 Modbus-RTU 搭配 RS-485 或者 Modbus-TCP 搭配 Ethernet 來傳輸，也可以使用 UART 或 RS-232 甚至 RF 等無線媒介傳遞 Modbus 協議，並沒有規定一定要搭配哪種實體層。本文著重介紹 Modbus-RTU 搭配 RS-485 的通訊架構。</p>
+<p>Modbus 幾種類型與傳輸媒介搭配:</p>
+<p><img src="/images/post/modbus/modbus_types.png" alt="image: Modbus Type"></p>
+<h3 id="幾種-modbus-形式-modbus-rtumodbus-asciimodbus-tcp">幾種 Modbus 形式: Modbus-RTU、Modbus-ASCII、Modbus-TCP</h3>
+<h4 id="modus-ascii">Modus-ASCII</h4>
+<p>早期這個協議用比較多，但被傳輸更有效率的 Modbus-RTU 取代，請參考<a href="#modbus-ascii-%E5%92%8C-modbus-rtu-%E6%AF%94%E8%BC%83">與 Modbus-RTU 之比較</a>。</p>
+<h4 id="modus-rtu">Modus-RTU</h4>
+<p>Modbus-RTU (Remote Terminal Unit) 的命名強調了它的應用場景是為遠程設備之間的高效通訊而設計。</p>
+<p>Modbus-RTU 協議規定採用 <strong>Master / Slave 架構</strong>，一律由 Master 發起通訊，相應的 Slave 進行回應。
+因為 Modbus 為 Application 協議，並無規範用什麼媒介傳遞</p>
+<ul>
+<li>故可以選擇 UART TTL 直接傳輸，或者加上 MAX232 晶片，採用 RS-232 傳輸標準。這兩者都是 point-to-point 拓樸，即 1 個 Master 對 1 個 Slave 點到點傳輸。</li>
+<li>不過工業界用最多的還是 UART 加上 MAX485 晶片的 RS-485 標準，比起 RS-232 有眾多優勢，並且他是 Bus topology，多裝置得以連接在同一 fieldbus 上，即 1 個 Master 對多個 Slaves，非常適合工業自動化多設備連接。</li>
+</ul>
+<h4 id="modbus-tcp">Modbus-TCP</h4>
+<p>核心封包結構 Modbus-RTU 沒有差很多，只是是經由 Ethernet 媒介的網路架構，這使使得 Modbus-TCP 在許多方面都比 Modbus-RTU 來的強大，不論是速度、裝置數量限制，拓樸等。</p>
+<p>Ethernet 通過交換機可形成 Star topology，得益於 Ethernet 架構，可以設計為 Ethernet client / server 形式，能有多個 clients 端，亦能同時對多個 Slaves 發起請求。</p>
+<h4 id="modbus-rtu-與-modbus-tcp-重點比較">Modbus-RTU 與 Modbus-TCP 重點比較</h4>
+<p>Modbus-RTU 模式</p>
+<ul>
+<li>採用 Master/Slave 架構，由 Master 發起 request 並等待 slave response，常見的實作是 blocking 的方式，若有多個裝置，那就是由 Master 一一去 polling 多個 Slaves 裝置。而實作成非阻塞(non-blocking)或非同步(asynchronous) 的 Modbus RTU 是完全可行的，並且在某些情況下更高效。</li>
+<li>通信延遲取決於波特率、串行接口速度，以及訊息間的 3.5 字元時間間隔。且單次通信通常只能處理一個主從請求，當設備數量增加或通信頻繁時，效率下降明顯。</li>
+<li>適用於短距離、低成本的串行通信環境。搭配 RS-485 可支援多節點通信，適合小型分布式系統。</li>
+</ul>
+<p>Modbus-TCP 模式</p>
+<ul>
+<li>Client 可以一次對多個 Servers 發出 request，是較快速的資料交換方式，但 Servers 的 response 順序不一定照著 request 的順序，這是網路的特性。</li>
+<li>因為採用 Ethernet，因此可以輕鬆與許多其他 Ethernet 裝置或者透過 Ethernet Gateway 與其他總線協議共享同一網路，擴充性更好。</li>
+<li>Modbus-TCP 是將 Modbus-RTU 的 PDU（Protocol Data Unit）封裝為 TCP 的應用層數據; Slave ID 則改用 ip address; 且捨棄原本的 CRC 校驗欄位，採用 TCP/IP 協議的校驗機制。</li>
+<li>基於高速以太網，通信延遲較低，可同時處理多個 TCP 連線，支援更高數量的設備，實現並行通信，不會因為單線阻塞而影響整體效率。</li>
+<li>常用於現代化的工業控制系統，支持雲端和遠程監控，可直接集成於 IT 網絡，與其他基於 TCP/IP 的系統無縫通信。</li>
+<li>設備需要以太網接口，硬體成本較高，且實現相對複雜，需要 TCP/IP 協議棧支持，需要配置 IP 地址、子網掩碼和網關等網絡參數。</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th><strong>Modbus RTU</strong></th>
+          <th><strong>Modbus TCP</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>傳輸媒介</td>
+          <td>RS-232 / RS-485</td>
+          <td>Ethernet</td>
+      </tr>
+      <tr>
+          <td>傳輸速率</td>
+          <td>低（受波特率限制，例如 9600bps、115200bps）</td>
+          <td>高（受網絡速率限制，可達數百 Mbps）</td>
+      </tr>
+      <tr>
+          <td>設備數量</td>
+          <td>受限（最多 32 個節點）</td>
+          <td>基於 ip，幾乎無限</td>
+      </tr>
+      <tr>
+          <td>通信效率</td>
+          <td>單線串行通信，效率低</td>
+          <td>多連接並行通信，效率高</td>
+      </tr>
+      <tr>
+          <td>設備成本</td>
+          <td>低</td>
+          <td>較高</td>
+      </tr>
+      <tr>
+          <td>配置難度</td>
+          <td>簡單</td>
+          <td>複雜</td>
+      </tr>
+      <tr>
+          <td>適用場景</td>
+          <td>小規模、低成本工業通信</td>
+          <td>大規模、現代化網絡通信</td>
+      </tr>
+      <tr>
+          <td>架構</td>
+          <td>需要明確的主從關係（Master/Slave）</td>
+          <td>Client/Server 架構，可同時與多個設備通信</td>
+      </tr>
+  </tbody>
+</table>
+<p>根據應用需求選擇：</p>
+<ul>
+<li>如果系統規模小，且需要低成本的穩定通信，<strong>Modbus RTU</strong> 是理想選擇。</li>
+<li>如果需要高速、大規模、靈活的通信環境，特別是需要與 IT 系統集成，選擇 <strong>Modbus TCP</strong> 更為合適。</li>
+</ul>
+<h3 id="rs-485-簡介">RS-485 簡介</h3>
+<ul>
+<li>由 RS-485(A) / RS-485(B) 2 線組成的雙絞線，傳遞差分訊號
+<ul>
+<li>常用硬體是 MAX485 晶片，可將 UART TX/RX 信號轉為 differtial 差分信號。</li>
+<li>接收端判斷 2 線 A-B 的結果即可判斷數位訊號為 High(又稱 Mark) 或者 Low(又稱 Space)。</li>
+</ul>
+</li>
+<li>為半雙工模式(Half-Duplex)，同一條總線上在任一時刻只有一個設備作為驅動器，其餘設備均作為接收器：
+<ul>
+<li><strong>主站請求時</strong>，主站是驅動器，從站是接收器。</li>
+<li><strong>從站回應時</strong>，某一個從站成為驅動器，主站和其他從站是接收器。</li>
+</ul>
+</li>
+<li>RS-485 設計為 Multi-Drop 多設備共用總線的 Bus topology。</li>
+<li>其需要 2 個終端電阻施加在 Bus 兩側末端，跨接在 A 與 B 線上避免 signal reflection，這是 Bus topology 常見作法。</li>
+<li>限制: 標準的 RS-485 BUS 上的裝置數量上限為 32 台。</li>
+</ul>
+<p>優點:</p>
+<ul>
+<li>因為是雙絞線差分信號，所以抗干擾性強，可以傳輸距離更遠。但須注意 cable length 跟 baudrate 以及裝置數量是相互影響的。</li>
+<li>比起 RS-232 point-to-point topology，RS-485 的 Multi-drop 架構可以多裝置連接共用總線。</li>
+<li>接線簡單，就 2 條線即可，不需要共地，因為是差分訊號，接收端只需要比較兩線的電壓差異，即可判斷訊號，傳送端跟接收端的電壓基準是不是相同並不重要。
+(然而，若訊號出現問題還是可以試著共地試試。)</li>
+<li>對於程式開發者來說非常方便，就是直接控制 UART 晶片而已，所以也需要配置 UART 設定，比如 baudrate。</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="modbus-rtu-協議">Modbus-RTU 協議</h2>
+<p>這邊不會詳細列出 request 跟 response 格式，因為 Modbus 協議很簡單，<a href="https://modbus.org/docs/PI_MBUS_300.pdf">Modbus Specification</a> 也舉例的蠻清楚，只要找裝置實際操作，對照 spec 看基本很容易就可以理解。
+因此這邊主要提供一些 Diagram，透過圖片勾勒出基本概念。
+本文章主要討論的對象是 Modbus-RTU，為了撰寫方便，若有未表示協議類型的 Modubs 簡稱，請默認其為 Modbus-RTU。</p>
+<h3 id="modbus-frame">Modbus Frame</h3>
+<p>Modbus 封包共分 4 大部分:</p>
+<ol>
+<li>Slave Address (固定 1 byte)</li>
+<li>Function Code (固定 1 byte)</li>
+<li>Data (n Bytes)，Data field 依照不同 function code 會有不同的長度</li>
+<li>CRC (固定 2 bytes)</li>
+</ol>
+<p><img src="/images/post/modbus/Modbus_Frame.png" alt="image: Modbus Frame"></p>
+<p>重點提要</p>
+<ul>
+<li>Modbus 整個封包上限為 256 bytes，扣掉其他固定大小的部分，Data 部分的變動範圍就是 0 ~ 252 Bytes。
+<ul>
+<li>封包一定是 Bytes 倍數，不會有零星的 bits，就算只操作 1-bit 的 coil，也會以 0 補滿傳遞 1 個 Byte。</li>
+</ul>
+</li>
+<li>Modbus-RTU 為 Master/Slave 架構，只能有一個 Master，故 Master 無須地址，但每個 Slaves 有唯一地址。Slave Address 由 1 byte 表示，其中 <code>1-247</code> 可使用，其餘保留給特殊用途。</li>
+<li>Function Code 用來表示 Master 要 Slave 做什麼，針對 Slave Register Map 哪個類型部分; 讀 或 寫 ; single 或 multiple 操作。</li>
+<li>Data 資料則是依據 Function Code 以及 request/response 需要，而有不同內容。</li>
+<li>Modbus 採 CRC-16，而 CRC-16 有很多種，Modbus CRC 採用其中一種，有許多網路工具提供 CRC 計算，<a href="https://www.lammertbies.nl/comm/info/crc-calculation">此工具</a>經過測試沒問題。
+<ul>
+<li>CRC 是由前三個部分的數據計算而得的，照著 Slave Address, Function Code, n Bytes of Data 的順序輸入計算工具即可。</li>
+<li>CRC-16 的 Low-Byte 先傳， High-Byte 後傳。(See page 113 of <a href="https://modbus.org/docs/PI_MBUS_300.pdf">Modbus Specification</a>)</li>
+</ul>
+</li>
+</ul>
+<p>傳送順序</p>
+<ul>
+<li>任意 Byte 中，必定是 Least Significant Bit 先傳，最後是 Most Significant Bit，即照 UART Protocol 順序。</li>
+<li>至於 Data Field 超過 1 Byte 以上的資料，就照 [<a href="https://modbus.org/docs/PI_MBUS_300.pdf">Modbus Specification</a>] 規範，每個 function code 的 request / response 都有清楚規範 Data Bytes 傳送順序。</li>
+<li>CRC-16 的 2 Bytes 資料，規範是 Low-Byte 先傳， High-Byte 後傳。</li>
+</ul>
+<h3 id="function-code">Function Code</h3>
+<p><img src="/images/post/modbus/modbus_function_code.png" alt="image: Function Code"></p>
+<p>Function Code 用來表示 Master 要 request Slave 做什麼，</p>
+<ul>
+<li>針對 Slave Register Map 哪個類型部分</li>
+<li>讀 or 寫</li>
+<li>是 single or multiple 操作。</li>
+</ul>
+<h3 id="modbus-slave-register-map">Modbus Slave Register Map</h3>
+<p>Slave Register Map 分為 4 個部分:</p>
+<ol>
+<li>Discrete Output = Coil (1-bit)</li>
+<li>Discrete Input = Contact (1-bit)</li>
+<li>Input Register = Analog Input (16-bits, 2 words)</li>
+<li>Holding Register = Analog Output (16-bits, 2 words)</li>
+</ol>
+<p><img src="/images/post/modbus/modbus_slave_reg_map.png" alt="image: Slave Register Map"></p>
+<p>Slave 設計 Register Map，告知 Master 自己數據資料格式。Master 透過 function code 即可指定對 Slave Register Map 哪一部分的資料進行讀或寫。由上圖可看到 I/O Address Name 前綴第一個數字即代表 Slave Register Map 類型，比如說 4xxxx 代表 Holding Registers。</p>
+<p>而封包 PDU 之中指定的 address，是相對於 function code 指定操作對象(Slave Register Map 4 個部分之一)的相對位址。比如 function code 為 6; PDU Address 給 2 的話，那就是針對 Holding Register 區域 offset 2 的位置，即操作 Register Map 40003 (40001 + 2) 這個 Holding Register。</p>
+<p>Modbus 本質是資料交換 protocol，不過從 Modbus Slave Register Map 4 個部分之命名方式，隱含其與 PLC I/O 的連結，如 coil, contact, analog in, analog out 等等。
+源於歷史，當初設計這個 protocol 就是把 Slave 設計為擴充 Master 之 I/O 而生，Master 操作 Slave 猶如操作自己的 Coils 或 Contacts。</p>
+<p>但既然 Modbus 本質是資料交換，那 Slave 端 Register Map 自然不限於跟 Coils 與 Contacts 交互，資料交換後得以進行任意運算或其他 I/O 操作。</p>
+<ul>
+<li>Master request <code>Coils</code> 或 <code>Holding Registers</code> 部分，資料流就是 : Master -&gt; Slave。</li>
+<li>Master request <code>Discrete Inputs</code> 或 <code>Input Registers</code> 部分，資料流就是 : Slave -&gt; Master。</li>
+</ul>
+<h3 id="modbus-rtu-之傳輸時間間隔">Modbus RTU 之傳輸時間間隔</h3>
+<h4 id="封包與封包之間要有-35-chars-的傳輸間隔">封包與封包之間要有 3.5 chars 的傳輸間隔</h4>
+<p>Modbus RTU 協議規定相鄰的 Modbus frame 之間，必須有 「3.5 字元的傳輸時間之空閒間隔」來分隔封包：</p>
+<ul>
+<li><strong>主站</strong>發送請求後，總線必須空閒至少 3.5 字元時間，<strong>從站</strong>才能開始回應。</li>
+<li><strong>從站</strong>回應完成後，總線也需要維持 3.5 字元的空閒時間，<strong>主站</strong> 下一次請求才能發送。</li>
+</ul>
+<p>在該時間區間內，master 與 slave 不做任何動作。
+如果空閒間隔小於 3.5 字元時間，可能導致設備認為兩個 Modbus frame 是連續的一部分，從而發生解析錯誤。</p>
+<p><strong>3.5 字元時間如何計算？</strong></p>
+<p>以 UART 9600N81（8 個數據位元，無校驗位元，1 個停止位元）為例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>每個字元需要的時間：
+</span></span><span style="display:flex;"><span>(1 起始位 + 8 數據位 + 1 停止位) / baudrate
+</span></span><span style="display:flex;"><span>= (1 + 8 + 1) / 9600 秒
+</span></span><span style="display:flex;"><span>= 1.0417 毫秒/字元
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3.5 字元的傳輸時間：
+</span></span><span style="display:flex;"><span>= 3.5 × 1.0417 毫秒
+</span></span><span style="display:flex;"><span>≈ 3.646 毫秒
+</span></span></code></pre></div><p>字符傳送速度跟 UART baudrate 有關，跟封包大小無關。</p>
+<h4 id="modbus-rtu-的規定-modbus-frame-是連續發送的中間不應有超過-15-字元的空閒時間">Modbus RTU 的規定 Modbus frame 是連續發送的，中間不應有超過 1.5 字元的空閒時間</h4>
+<p>Modbus RTU 要求 Modbus frame 內的所有字節必須無間斷發送。
+若 Modbus frame 中間有超過 1.5 字元的空閒時間，接收端會認為該 frame 已經結束，並將剩餘部分當作下一個 Modbus frame 的開頭。</p>
+<h3 id="example">Example</h3>
+<p>實驗步驟</p>
+<ol>
+<li>
+<p>在 Modbus RTU Slave 內部實作了 2 個 coils。</p>
+</li>
+<li>
+<p>先以 Function Code <code>0x0F</code> Write Multiple Coils，將第 1 個 Coil 寫 &lsquo;0&rsquo;，第 2 個 Coil 寫 &lsquo;1&rsquo;。</p>
+<p><img src="/images/post/modbus/Modbus-Example-Fig1.png" alt="image: Modbus-Example-Fig1"></p>
+</li>
+<li>
+<p>再以 Function Code <code>0x01</code> Read Coils 讀取，將得到 Coils 讀值為 0x02。</p>
+<p><img src="/images/post/modbus/Modbus-Example-Fig2.png" alt="image: Modbus-Example-Fig2"></p>
+</li>
+</ol>
+<p>幾點觀察:</p>
+<ul>
+<li>在指定 PDU Data Address 以及 quantity 時，都是 High-byte 先傳再來才是 Low-byte。
+<ul>
+<li>quantity 單位是看傳什麼資料，若操作對象是 coil，那 quantity 代表多少 coils; 若操作對象是 holding register，那 quantity 則代表多少 holding registers。</li>
+</ul>
+</li>
+<li>傳送 Data Value 時，若超過 1 byte，則是先傳 Data Address 指向的那筆資料，以 little-endian 的記憶體存放來說，那就是先傳 Low-Byte 的資料。</li>
+<li>CRC 則是 Low-byte 先傳再來才是 High-byte。</li>
+</ul>
+<p>至於每個 Byte 都是從 LSB 開始傳，最後才是 MSB，以上規範在規格書中都寫得很清楚。</p>
+<p>不過一般使用者不需要了解那麼深入，只需要知道要放什麼資料即可，通常給使用者輸入的介面都是很友善的。</p>
+<!-- raw HTML omitted -->
+<h2 id="實測">實測</h2>
+<h3 id="測試目的與方法">測試目的與方法</h3>
+<p>為了要驗證對於 protocol 了解的是否正確，一定要實測看看，所以找了現成的 Modbus-RTU Master 與 Slave 來測試。為了方便測試，Master 找了跑在 PC 上的 UI 程式，方便操作; 而 Slave 則找 Arduino 程式，畢竟手邊有許多 Arduino 裝置，若想測試多台 slaves 的 bus topology 會比較方便。</p>
+<p>在 Windows PC 用 QModMaster 作為 Master 測試 Arduino Modbus RTU Slave 功能，測試 QModMaster 支援之 Function code: 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x0f, 0x10。對照 <a href="https://modbus.org/docs/PI_MBUS_300.pdf">Modbus Specification</a> 手冊查看通訊格式，實測 Modbus-RTU Master 與 Slave 運作是否正確。</p>
+<h3 id="測試環境">測試環境</h3>
+<ol start="0">
+<li>因為手邊沒有 USBto485 裝置，所以僅使用 USB2UART 裝置，但我想對於測試 Modbus-RTU 效果是一樣的，只可惜無法像 RS-485 一樣測試多裝置。</li>
+<li>PC Modbus Master 軟體 - <a href="https://sourceforge.net/projects/qmodmaster/">QModMaster</a>
+<ul>
+<li>簡單好用，支援 Modbus-RTU 與 Modbus-TCP，目前僅測試過 Modbus-RTU 部分。</li>
+<li>基於 Qt-based UI 及 libmodbus Modbus Library。
+<img src="/images/post/modbus/Modubs-QModMaster.png" alt="image: QModMaster"></li>
+</ul>
+</li>
+<li>Arduino Modbus Slave 韌體 - <a href="https://github.com/CMB27/ModbusRTUSlave">Arduino Modbus RTU Slave Example</a>
+<ul>
+<li>
+<p>作者為: C.M.Bulliuer</p>
+</li>
+<li>
+<p>程式架構簡單，但需要好幾個 libraries 才能運作，compile 不過只要依照缺少 library 之提示，透過 library manager 一一下載即可。下圖為需要之相依程式庫:</p>
+<p><img src="/images/post/modbus/Modbus-ArduinoSlaveExample_libraries_needed.png" alt="image: Arduino SlaveExample Lib dependency"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="code">Code</h4>
+<p>原始範例程式透過巨集定義是可以運行在多個平台的，只是為了呈現簡便，我只保留與我測試平台相關的部分。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ModbusRTUSlave.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega1280__)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MODBUS_SERIAL Serial
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MODBUS_SERIAL Serial1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MODBUS_BAUD 115200
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MODBUS_CONFIG SERIAL_8N1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MODBUS_UNIT_ID 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int16_t</span> buttonPins[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int16_t</span> ledPins[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int16_t</span> dePin <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int16_t</span> knobPins[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {A0, A1};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ModbusRTUSlave <span style="color:#a6e22e">modbus</span>(MODBUS_SERIAL, dePin);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> numCoils <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> numDiscreteInputs <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> numHoldingRegisters <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> numInputRegisters <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> coils[numCoils];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> discreteInputs[numDiscreteInputs];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">uint16_t</span> holdingRegisters[numHoldingRegisters];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">uint16_t</span> inputRegisters[numInputRegisters];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(knobPins[<span style="color:#ae81ff">0</span>], INPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(knobPins[<span style="color:#ae81ff">1</span>], INPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(buttonPins[<span style="color:#ae81ff">0</span>], INPUT_PULLUP);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(buttonPins[<span style="color:#ae81ff">1</span>], INPUT_PULLUP);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(ledPins[<span style="color:#ae81ff">0</span>], OUTPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(ledPins[<span style="color:#ae81ff">1</span>], OUTPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(ledPins[<span style="color:#ae81ff">2</span>], OUTPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinMode</span>(ledPins[<span style="color:#ae81ff">3</span>], OUTPUT);  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">configureCoils</span>(coils, numCoils);
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">configureDiscreteInputs</span>(discreteInputs, numDiscreteInputs);
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">configureHoldingRegisters</span>(holdingRegisters, numHoldingRegisters);
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">configureInputRegisters</span>(inputRegisters, numInputRegisters);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MODBUS_SERIAL.<span style="color:#a6e22e">begin</span>(MODBUS_BAUD, MODBUS_CONFIG);
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">begin</span>(MODBUS_UNIT_ID, MODBUS_BAUD, MODBUS_CONFIG);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    inputRegisters[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(knobPins[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    inputRegisters[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(knobPins[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>    discreteInputs[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">digitalRead</span>(buttonPins[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    discreteInputs[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">digitalRead</span>(buttonPins[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    modbus.<span style="color:#a6e22e">poll</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">analogWrite</span>(ledPins[<span style="color:#ae81ff">0</span>], holdingRegisters[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">analogWrite</span>(ledPins[<span style="color:#ae81ff">1</span>], holdingRegisters[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">digitalWrite</span>(ledPins[<span style="color:#ae81ff">2</span>], coils[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">digitalWrite</span>(ledPins[<span style="color:#ae81ff">3</span>], coils[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="architecture">Architecture</h4>
+<p><img src="/images/post/modbus/Modbus-Arduino-RTU_Slave_Architecture.png" alt="image: Arduino SlaveExample Architecture"></p>
+<p>User 為 Slave Register Map 的 4 個部分分別定義 Array 空間，並透過 <code>configure...()</code> 函式與 Register Map 綁定。
+Configure 完畢後，使用者只須要操作自己定義的變數空間(user defined variables)，無須去操作 Slave Register Map。</p>
+<p>Slave 由 <code>Modbus.poll()</code> 函式，將 Slave Register Map 資料透過 Modbus 交換。</p>
+<p><code>configure...()</code> 等相關 configure API 只能設定一次，無法分次設置，所以必須一次給好完整空間。
+這點比較可惜，因為我總想為 IO 設定有意義一點的名稱，比如 LED, fan 等等名稱，不想統統用 coils[] array 表示。</p>
+<h3 id="結果">結果</h3>
+<p>經過測試兩者運作無誤，透過 Modbus Protocol，Master 可以 request 控制 Slave 不管是數位或類比之輸入輸出。
+QModMaster 以及 Arduino Slave Example 都很簡單也成功通過測試，可以作為 Modbus 學習參考工具。
+若未來要自己實現自己的 Modbus-RTU Master 或者 Slave 裝置，都可以用這些工具交叉驗證。</p>
+<!-- raw HTML omitted -->
+<h2 id="延伸討論">延伸討論</h2>
+<h3 id="為何-modbus-使用-rs-485-僅支持-32-個設備">為何 Modbus 使用 RS-485 僅支持 32 個設備？</h3>
+<p>先說結論: 這是 <strong>RS-485 的物理層特性</strong> 的限制，而非 Modbus。</p>
+<h4 id="rs-485-的設備數量限制與其驅動能力有關"><strong>RS-485 的設備數量限制與其驅動能力有關：</strong></h4>
+<p>每個設備（包括主站和從站）會對通信總線施加一定的負載，通常以 <strong>&ldquo;單位負載（Unit Loads，UL）&rdquo;</strong> 表示。
+RS-485 總線上的每個裝置都是一個負載，RS-485 標準規範規定，驅動器必須能驅動 <strong>32 單位負載</strong> 。 每個負載會對總線施加一定的電氣負載，這些負載的累積不能超過驅動器的能力。意思是: 其中 1 台裝置作為驅動器 (Driver/Transceiver)發送訊號時，需要推動至少 31 台接收器 (Receiver)。</p>
+<ul>
+<li><strong>Driver（驅動器）</strong>：負責在 RS-485 總線上發送信號的設備，通常是主站或從站在某一時刻充當的角色。</li>
+<li><strong>Receiver（接收器）</strong>：負責接收來自總線上的信號的設備，驅動器之外的都是接收器。</li>
+</ul>
+<p><strong>擴充方法:</strong></p>
+<ul>
+<li>現代 RS-485 晶片可能是<strong>低負載（Low-Load）設計</strong>（例如 1/4 UL 或 1/8 UL），這允許更多的設備接入，可以將設備數量增加到 128 或更多。
+<ul>
+<li>如果接收器的負載是 1/4 UL，每個驅動器可以支持多達 128 個接收器（32 UL ÷ 1/4 UL = 128）。</li>
+<li>如果接收器的負載是 1/8 UL，每個驅動器可以支持多達 256 個接收器。</li>
+</ul>
+</li>
+<li>或使用 <strong>中繼器(Repeater)</strong> 可以增加總線上的設備數量，同時擴展通信距離。
+<ul>
+<li>中繼器將 RS-485 網絡分段，增強信號並重新驅動。</li>
+<li>每段網絡的設備數量仍受 1 驅動器 + 31 接收器的限制，但中繼器可以增加網絡的總設備數量。</li>
+</ul>
+</li>
+</ul>
+<h4 id="modbus-協議層的限制"><strong>Modbus 協議層的限制</strong></h4>
+<p>Modbus 協議層限制了 ID 的範圍，Modbus 的從站地址（Slave ID）為 1 Byte，其中 <code>0</code>、<code>248-255</code> 保留作其他用途（如廣播地址和未來擴展），其實際 Slaves 地址範圍為 <code>1-247</code>。</p>
+<h4 id="5-總結"><strong>5. 總結</strong></h4>
+<p>Modbus 搭配 RS-485 時只能有 32 個設備是受制於 RS-485 物理層的能力。</p>
+<ul>
+<li><strong>&ldquo;1 驅動器 + 31 接收器&rdquo;</strong> 是 RS-485 在標準單位負載情況下的最大設備配置。</li>
+<li>使用低負載接收器或中繼器可以增加網絡容量。</li>
+<li>在實際應用中，信號完整性（如終端電阻和線路長度）也是限制 RS-485 設備數量的重要因素。</li>
+</ul>
+<h3 id="modbus-ascii-和-modbus-rtu-比較">Modbus ASCII 和 Modbus RTU 比較</h3>
+<p>這是 Modbus 協議的兩種傳輸模式，它們的主要區別在於數據編碼、傳輸速度以及處理方式。以下是它們的比較：</p>
+<ol>
+<li>
+<p><strong>數據編碼</strong>：</p>
+<ul>
+<li><strong>Modbus ASCII</strong>：數據是以 ASCII 字符格式傳送，每個字節都會轉換為兩個 ASCII 字符來表示。例如，字節 <code>0x0A</code> 會被傳送為兩個字符 <code>0</code>、<code>A</code>（十六進制）。</li>
+<li><strong>Modbus RTU</strong>：數據以二進制格式傳送，每個字節直接傳送 8 位數據。因此，Modbus RTU 在數據編碼上比 Modbus ASCII 更為高效，因為它不需要額外的字符轉換。</li>
+</ul>
+</li>
+<li>
+<p><strong>傳輸效率</strong>：</p>
+<ul>
+<li><strong>Modbus ASCII</strong>：由於每個字節需要被轉換成兩個 ASCII 字符，因此其傳輸效率較低，數據量更大，傳輸速度相對較慢。</li>
+<li><strong>Modbus RTU</strong>：由於使用的是二進制格式，數據量較少，傳輸速度較快，因此比 Modbus ASCII 更有效率。</li>
+</ul>
+</li>
+<li>
+<p><strong>同步機制</strong>：</p>
+<ul>
+<li><strong>Modbus ASCII</strong>：每個消息的結尾通常會有一個字符 <code>CR</code>（回車）和 <code>LF</code>（換行）來標誌結束，這樣可以幫助接收方識別消息結尾。</li>
+<li><strong>Modbus RTU</strong>：消息的結尾是由固定的時間延遲來確定，通常是無線消息之間有至少 3.5 個字符時間的間隔來標識一個消息的結束。</li>
+</ul>
+</li>
+<li>
+<p><strong>錯誤檢測</strong>：</p>
+<ul>
+<li><strong>Modbus ASCII</strong>：使用 16 位的 LRC (Longitudinal Redundancy Check) 校驗來檢查數據是否完整。</li>
+<li><strong>Modbus RTU</strong>：使用 CRC (Cyclic Redundancy Check) 校驗，它比 LRC 更強大，更適合長距離的數據傳輸。</li>
+</ul>
+</li>
+</ol>
+<p>總結來說，Modbus RTU 在大多數情況下都比 Modbus ASCII 更為高效，基本上現在很少在用 ASCII 模式，因此可以專注在 RTU 模式即可。</p>
+<h2 id="references">References</h2>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="https://modbus.org/docs/PI_MBUS_300.pdf">Modbus Specification</a></li>
+<li><a href="https://sourceforge.net/projects/qmodmaster/">QModMaster</a></li>
+<li><a href="https://github.com/CMB27/ModbusRTUSlave">Arduino Modbus RTU Slave Example</a></li>
+</ul>
+<!-- raw HTML omitted -->
+
+        </div>
+
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script>
+  var indexURL = "https://wsmao.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://wsmao.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/mark.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wsmao.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

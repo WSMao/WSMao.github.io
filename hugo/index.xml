@@ -6,8 +6,15 @@
     <description>Recent content in Hugo Series on Code My Life</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 21 Nov 2024 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2025 14:09:18 +0800</lastBuildDate>
     <atom:link href="https://wsmao.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Plugin - Syntax Highlight</title>
+      <link>https://wsmao.github.io/hugo/plugin-syntax_highlight/</link>
+      <pubDate>Tue, 07 Jan 2025 14:09:18 +0800</pubDate>
+      <guid>https://wsmao.github.io/hugo/plugin-syntax_highlight/</guid>
+      <description>&lt;h2 id=&#34;hugo-內建的-syntax-highlight---chroma&#34;&gt;Hugo 內建的 Syntax Highlight - Chroma&lt;/h2&gt;&#xA;&lt;p&gt;Hugo 提供了一個內建的語法高亮工具，基於 &lt;strong&gt;Chroma&lt;/strong&gt;，它是一個用 Go 語言編寫的語法高亮庫。Hugo 可以自動處理程式碼塊的語法高亮，並且內建支援許多語言和樣式。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About hugo series.</title>
       <link>https://wsmao.github.io/hugo/about-hugo-series/</link>

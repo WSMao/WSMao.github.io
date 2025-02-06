@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Code My Life</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹 Hugo 內建的 Syntax Highlight 以及 熱門的 Highlight.js。">
+  <meta name="author" content="Chris">
+    
+  
+  <meta name="theme-name" content="Digital-Zen" />
+  
+  <meta name="generator" content="Hugo 0.139.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wsmao.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/x-icon" sizes="32x32">
+  <link rel="icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/png" sizes="32x32">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- highlightjs -->
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/night-owl.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/c.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/cpp.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/python.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/javascript.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/css.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/http.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/markdown.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/json.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/ini.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/shell.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/excel.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/plaintext.min.js"></script>
+
+
+<!-- copy button -->
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+<script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js" onload="hljs.addPlugin(new CopyButtonPlugin());"></script>
+
+<!-- highlight all pre code element -->
+<script defer>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
+</script>
+
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+        
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://wsmao.github.io/"><img class="img-fluid"
+          src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/post/">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/hugo/">Hugo</a>
+          </li>
+          
+          
+        </ul>
+        
+        
+        <a class="navbar-brand mx-auto desktop-view" href="https://wsmao.github.io/"><img class="img-fluid"
+            src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://wsmao.github.io/tags/">Tags</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://wsmao.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+<section class="section-sm">
+  <div class="container">
+
+    <h1> Plugin - Syntax Highlight </h1>
+    <p> 介紹 Hugo 內建的 Syntax Highlight 以及 熱門的 Highlight.js。 </p>   
+
+    <hr>
+
+    <div class="content mb-5">
+        <h2 id="hugo-內建的-syntax-highlight---chroma">Hugo 內建的 Syntax Highlight - Chroma</h2>
+<p>Hugo 提供了一個內建的語法高亮工具，基於 <strong>Chroma</strong>，它是一個用 Go 語言編寫的語法高亮庫。Hugo 可以自動處理程式碼塊的語法高亮，並且內建支援許多語言和樣式。</p>
+<ul>
+<li>是 Go 語言 Chroma 套件完成的</li>
+<li>在你使用 hugo 將 markdown 轉成 html 時，就完成語法高量了，所以是在 server 端進行。</li>
+</ul>
+<h2 id="highlightjs">Highlight.js</h2>
+<p>是一個純 JavaScript 編寫的語法高亮庫，廣泛用於網頁中，支持大量程式語言和顏色樣式。</p>
+<ul>
+<li>highlight.js 是 javascript 語法，當整個 html 頁面載入後，在 client 端完成渲染。</li>
+<li>他會搜尋 pre code 元素，完成顏色渲染。</li>
+</ul>
+<p>可參考<a href="https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/">這篇 - 使用 highlight.js</a> 就可以載入成功。</p>
+<p>refs:</p>
+<ul>
+<li><a href="https://highlightjs.org/">highlight.js</a></li>
+<li><a href="https://github.com/highlightjs/highlight.js?tab=readme-ov-file#fetch-via-cdn">Fetch via CDN</a></li>
+</ul>
+<h2 id="比較總結">比較總結</h2>
+<table>
+  <thead>
+      <tr>
+          <th>特徵</th>
+          <th><strong>Hugo 內建語法高亮</strong></th>
+          <th><strong>Highlight.js</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>實現方式</strong></td>
+          <td>服務端渲染（靜態生成 HTML）</td>
+          <td>瀏覽器端處理（JavaScript）</td>
+      </tr>
+      <tr>
+          <td><strong>性能</strong></td>
+          <td>較快，無需依賴外部資源</td>
+          <td>較慢，依賴外部 JavaScript 和 CSS 加載</td>
+      </tr>
+      <tr>
+          <td><strong>語言支持</strong></td>
+          <td>支援多種語言，但較為有限</td>
+          <td>支援超過 180 種語言，靈活可擴展</td>
+      </tr>
+      <tr>
+          <td><strong>樣式選擇</strong></td>
+          <td>多種內建樣式可選</td>
+          <td>提供豐富的樣式選擇，可根據需求選擇特定主題</td>
+      </tr>
+      <tr>
+          <td><strong>SEO 友好性</strong></td>
+          <td>高，因為高亮是服務端渲染的</td>
+          <td>低，因為高亮是瀏覽器端處理的，搜尋引擎無法讀取高亮結果</td>
+      </tr>
+      <tr>
+          <td><strong>配置複雜度</strong></td>
+          <td>配置簡單，無需引入外部資源</td>
+          <td>需要手動引入外部庫，並配置相關的 JavaScript 和 CSS</td>
+      </tr>
+      <tr>
+          <td><strong>互動性</strong></td>
+          <td>無</td>
+          <td>可以動態切換主題或語言，提供更多的互動性</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="結論"><strong>結論</strong></h2>
+<ul>
+<li><strong>Hugo 內建語法高亮</strong> 適合於靜態網站，提供快速、簡單且高效的語法高亮，對 SEO 友好，且配置簡單。適合需要快速構建靜態網站，並且不需要太多動態效果的情境。</li>
+<li><strong>Highlight.js</strong> 更加靈活，適合需要高度自定義、動態處理程式碼高亮的網站。若需要豐富的語言支持或互動性，可以選擇這個庫，但需要注意性能和加載時間的影響。</li>
+</ul>
+<p>Hugo 自帶 Syntax Highlight 工具，但我更傾向於使用 Highlight.js 來實現，因為</p>
+<ul>
+<li>許多網站使用，支援更多語言與更多主題樣式，其中我很喜歡他的 <strong>night-owl 這個樣式用在 C 語言</strong>的效果。</li>
+<li>相比於 GO 語言，我更想使用 javascript，且目前 GO Chroma 直接產生出靜態檔案，將樣式都寫死在 element 中，不方便調整，更何況也找不到如何客製調整，換句話說，我無法進行任何 style 控制，只能選用為數不多的現成主題。</li>
+<li>而 highlight.js 則是動態在 client 端渲染，由指定載入的 css 跟 js 檔案來控制，只要引入不同的樣式，就可以動態更改，若他眾多樣式我都不喜歡，我也可以去下載 css 並自行調整樣式設定，即可套用我自定義的樣式。</li>
+</ul>
+
+    </div>
+        
+  </div>
+</section>
+
+
+
+
+
+<script>
+  var indexURL = "https://wsmao.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://wsmao.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/mark.js"></script>
+
+<script src="https://wsmao.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wsmao.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

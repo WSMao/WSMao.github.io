@@ -9,7 +9,7 @@
   <meta name="author" content="Chris">
     
   
-  <meta name="theme-name" content="liva-hugo" />
+  <meta name="theme-name" content="Digital-Zen" />
   
   <meta name="generator" content="Hugo 0.139.0">
 
@@ -19,19 +19,66 @@
   
   <link rel="stylesheet" href="https://wsmao.github.io/plugins/themify-icons/themify-icons.css ">
   
-  <link rel="stylesheet" href="https://wsmao.github.io/plugins/venobox/venobox.css ">
-  
 
   <!-- Main Stylesheet -->
   
   <link rel="stylesheet" href="https://wsmao.github.io/scss/style.min.css" media="screen">
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="https://wsmao.github.io/images/favicon.png " type="image/x-icon" sizes="32x32">
-  <link rel="icon" href="https://wsmao.github.io/images/favicon.png " type="image/png" sizes="32x32">
+  <link rel="shortcut icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/x-icon" sizes="32x32">
+  <link rel="icon" href="https://wsmao.github.io/images/00-site/favicon.png " type="image/png" sizes="32x32">
 
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- highlightjs -->
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/night-owl.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/c.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/cpp.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/python.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/javascript.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/css.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/http.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/markdown.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/json.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/ini.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/shell.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/excel.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/plaintext.min.js"></script>
+
+
+<!-- copy button -->
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+<script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js" onload="hljs.addPlugin(new CopyButtonPlugin());"></script>
+
+<!-- highlight all pre code element -->
+<script defer>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
+</script>
+
 
   <!-- google analitycs -->
   <script>
@@ -52,6 +99,7 @@
 
 </head>
 <body>
+        
 <!-- preloader start -->
 <div class="preloader">
   
@@ -63,7 +111,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
       <a class="navbar-brand mobile-view" href="https://wsmao.github.io/"><img class="img-fluid"
-          src="https://wsmao.github.io/images/logo.svg" alt="Code My Life"></a>
+          src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="ti-menu"></i>
       </button>
@@ -76,7 +124,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://wsmao.github.io/blog/">Post</a>
+            <a class="nav-link" href="https://wsmao.github.io/post/">Post</a>
           </li>
           
           
@@ -90,7 +138,7 @@
         
         
         <a class="navbar-brand mx-auto desktop-view" href="https://wsmao.github.io/"><img class="img-fluid"
-            src="https://wsmao.github.io/images/logo.svg" alt="Code My Life"></a>
+            src="https://wsmao.github.io/images/00-site/logo.svg" alt="Code My Life"></a>
         
         
         <ul class="navbar-nav">
@@ -128,7 +176,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="images/motto.png" class="img-fluid w-100 mb-4" alt="Live beautifully, Dream Passionately, Love Completely.">
+        <img src="images/00-site/motto.png" class="img-fluid w-100 mb-4" alt="Live beautifully, Dream Passionately, Love Completely.">
       </div>
 
       <div class="col-lg-6 mb-5 mb-lg-0 d-flex justify-content-center align-items-center text-center">
@@ -141,32 +189,7 @@
       
 
       
-      <div class="col-12 mt-5">
-        
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-      </div>
+      
 
     </div>
   </div>
@@ -186,8 +209,6 @@
 <script src="https://wsmao.github.io/plugins/jQuery/jquery.min.js"></script>
 
 <script src="https://wsmao.github.io/plugins/bootstrap/bootstrap.min.js"></script>
-
-<script src="https://wsmao.github.io/plugins/venobox/venobox.min.js"></script>
 
 <script src="https://wsmao.github.io/plugins/search/fuse.min.js"></script>
 

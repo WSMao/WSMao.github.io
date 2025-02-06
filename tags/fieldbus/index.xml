@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fieldbus on Code My Life</title>
+    <link>https://wsmao.github.io/tags/fieldbus/</link>
+    <description>Recent content in Fieldbus on Code My Life</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 27 Dec 2024 16:25:14 +0800</lastBuildDate>
+    <atom:link href="https://wsmao.github.io/tags/fieldbus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modbus-RTU</title>
+      <link>https://wsmao.github.io/post/modbus/</link>
+      <pubDate>Fri, 27 Dec 2024 16:25:14 +0800</pubDate>
+      <guid>https://wsmao.github.io/post/modbus/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%B9%BE%E7%A8%AE-modbus-%E5%BD%A2%E5%BC%8F-modbus-rtumodbus-asciimodbus-tcp&#34;&gt;幾種 Modbus 形式: Modbus-RTU、Modbus-ASCII、Modbus-TCP&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#rs-485-%E7%B0%A1%E4%BB%8B&#34;&gt;RS-485 簡介&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#modbus-rtu-%E5%8D%94%E8%AD%B0&#34;&gt;Modbus-RTU 協議&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#modbus-frame&#34;&gt;Modbus Frame&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#function-code&#34;&gt;Function Code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#modbus-slave-register-map&#34;&gt;Modbus Slave Register Map&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#modbus-rtu-%E4%B9%8B%E5%82%B3%E8%BC%B8%E6%99%82%E9%96%93%E9%96%93%E9%9A%94&#34;&gt;Modbus RTU 之傳輸時間間隔&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#example&#34;&gt;Example&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%AF%A6%E6%B8%AC&#34;&gt;實測&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E6%B8%AC%E8%A9%A6%E7%9B%AE%E7%9A%84%E8%88%87%E6%96%B9%E6%B3%95&#34;&gt;測試目的與方法&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E6%B8%AC%E8%A9%A6%E7%92%B0%E5%A2%83&#34;&gt;測試環境&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E7%B5%90%E6%9E%9C&#34;&gt;結果&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E5%BB%B6%E4%BC%B8%E8%A8%8E%E8%AB%96&#34;&gt;延伸討論&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%E7%82%BA%E4%BD%95-modbus-%E4%BD%BF%E7%94%A8-rs-485-%E5%83%85%E6%94%AF%E6%8C%81-32-%E5%80%8B%E8%A8%AD%E5%82%99&#34;&gt;為何 Modbus 使用 RS-485 僅支持 32 個設備？&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#modbus-ascii-%E5%92%8C-modbus-rtu-%E6%AF%94%E8%BC%83&#34;&gt;Modbus ASCII 和 Modbus RTU 比較&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Modbus 是常用的工業總線協議，屬於 Application Layer，工業上常用 Modbus-RTU 搭配 RS-485 或者 Modbus-TCP 搭配 Ethernet 來傳輸，也可以使用 UART 或 RS-232 甚至 RF 等無線媒介傳遞 Modbus 協議，並沒有規定一定要搭配哪種實體層。本文著重介紹 Modbus-RTU 搭配 RS-485 的通訊架構。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
