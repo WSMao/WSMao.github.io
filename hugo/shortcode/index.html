@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <title>Code My Life</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This is Chris&#39;s Blog. Welcome!">
+  <meta name="author" content="Chris">
+    
+  
+  <meta name="theme-name" content="Digital-Zen" />
+  
+  <meta name="generator" content="Hugo 0.139.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="http://localhost:1313/images/00-site/favicon.png " type="image/x-icon" sizes="32x32">
+  <link rel="icon" href="http://localhost:1313/images/00-site/favicon.png " type="image/png" sizes="32x32">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- highlightjs -->
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/night-owl.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/c.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/cpp.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/python.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/javascript.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/css.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/http.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/markdown.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/json.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/ini.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/shell.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/excel.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/plaintext.min.js"></script>
+
+
+<!-- copy button -->
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+<script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js" onload="hljs.addPlugin(new CopyButtonPlugin());"></script>
+
+<!-- highlight all pre code element -->
+<script defer>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
+</script>
+
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+        
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="http://localhost:1313/"><img class="img-fluid"
+          src="http://localhost:1313/images/00-site/logo.svg" alt="Code My Life"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/post/">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/hugo/">Hugo</a>
+          </li>
+          
+          
+        </ul>
+        
+        
+        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/"><img class="img-fluid"
+            src="http://localhost:1313/images/00-site/logo.svg" alt="Code My Life"></a>
+        
+        
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/tags/">Tags</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="http://localhost:1313//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+<section class="section-sm">
+  <div class="container">
+
+    <h1> To be named. </h1>
+    <p>  </p>   
+
+    <hr>
+
+    <div class="content mb-5">
+        <ul>
+<li><a href="#q-%E4%BB%A5%E4%B8%8B%E7%A8%8B%E5%BC%8F%E5%9C%A8-markdown-%E4%B8%AD-%E7%94%A8%E9%80%94%E7%82%BA%E4%BD%95">Q: 以下程式在 Markdown 中 用途為何?</a></li>
+<li><a href="#a">A:</a>
+<ul>
+<li><a href="#%E5%8A%9F%E8%83%BD%E8%88%87%E7%94%A8%E9%80%94"><strong>功能與用途</strong></a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B"><strong>使用範例</strong></a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><strong>注意事項</strong></a></li>
+</ul>
+</li>
+<li><a href="#q-%E9%80%99%E8%B7%9F%E6%88%91%E5%9C%A8-shortcodesrawhtmlhtml-%E8%A3%A1%E9%9D%A2%E7%9A%84-inner-%E6%9C%89%E4%BD%95%E9%97%9C%E8%81%AF">Q: 這跟我在 shortcodes/rawhtml.html 裡面的  {{ .Inner }} 有何關聯?</a></li>
+<li><a href="#a-1">A:</a>
+<ul>
+<li><a href="#shortcodesrawhtmlhtml-%E7%9A%84%E4%BD%9C%E7%94%A8"><strong><code>shortcodes/rawhtml.html</code> 的作用</strong></a></li>
+<li><a href="#-inner-%E7%9A%84%E5%8A%9F%E8%83%BD"><strong><code>{{ .Inner }}</code> 的功能</strong></a></li>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><strong>工作原理</strong></a></li>
+<li><a href="#shortcodesrawhtmlhtml-%E6%96%87%E4%BB%B6%E7%AF%84%E4%BE%8B"><strong><code>shortcodes/rawhtml.html</code> 文件範例</strong></a></li>
+<li><a href="#%E9%80%B2%E4%B8%80%E6%AD%A5%E7%9A%84%E8%87%AA%E5%AE%9A%E7%BE%A9"><strong>進一步的自定義</strong></a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%87%89%E7%94%A8%E9%80%99%E4%BA%9B%E9%97%9C%E4%BF%82"><strong>如何應用這些關係</strong></a></li>
+<li><a href="#%E7%B5%90%E8%AB%96"><strong>結論</strong></a></li>
+</ul>
+</li>
+<li><a href="#q-%E6%89%80%E4%BB%A5-rawhtml-%E6%98%AF%E4%B8%80%E5%80%8B%E8%87%AA%E5%AE%9A%E7%BE%A9%E7%9A%84-shortcode-%E6%88%91%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%8F%9B%E5%80%8B%E5%90%8D%E7%A8%B1%E5%97%8E">Q: 所以 rawhtml 是一個自定義的 shortcode? 我也可以換個名稱嗎?</a></li>
+<li><a href="#a-2">A:</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E7%BE%A9-shortcode-%E5%90%8D%E7%A8%B1"><strong>如何自定義 Shortcode 名稱</strong></a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85-1"><strong>注意事項</strong></a></li>
+<li><a href="#%E7%B5%90%E8%AB%96-1"><strong>結論</strong></a></li>
+</ul>
+</li>
+<li><a href="#q">Q:</a></li>
+<li><a href="#a-3">A:</a>
+<ul>
+<li><a href="#1-hugo-%E7%9A%84%E5%85%A7%E5%BB%BA-shortcode"><strong>1. Hugo 的內建 Shortcode</strong></a></li>
+<li><a href="#2-%E5%91%BC%E5%8F%AB-shortcode-%E7%9A%84%E8%AA%9E%E6%B3%95"><strong>2. 呼叫 Shortcode 的語法</strong></a></li>
+<li><a href="#3-%E7%AF%84%E4%BE%8B%E5%B0%8D%E6%AF%94"><strong>3. 範例對比</strong></a></li>
+<li><a href="#%E7%B5%90%E8%AB%96-2"><strong>結論</strong></a></li>
+</ul>
+</li>
+<li><a href="#q-%E5%9B%9E%E5%88%B0%E5%89%9B%E5%89%9B%E7%9A%84-rawhtml-%E9%80%99%E5%80%8B-shortcode%E5%85%B6%E5%85%A7%E5%AE%B9%E5%8F%AA%E6%9C%89-inner-%E7%9B%B8%E7%95%B6%E6%96%BC%E5%85%A7%E5%AE%B9%E4%B8%8D%E6%94%B9%E5%8B%95%E9%82%A3%E9%BA%BC%E8%B7%9F%E6%88%91%E6%8A%8A-shortcode-%E5%8E%BB%E6%8E%89%E6%9C%89%E4%BD%95%E5%B7%AE%E5%88%A5">Q: 回到剛剛的 rawhtml 這個 shortcode，其內容只有  {{ .Inner }}，相當於內容不改動，那麼跟我把 shortcode 去掉有何差別?</a></li>
+<li><a href="#a-4">A:</a>
+<ul>
+<li><a href="#%E5%8D%80%E5%88%A5%E8%88%87%E7%94%A8%E9%80%94"><strong>區別與用途</strong></a></li>
+<li><a href="#%E7%B5%90%E8%AB%96-3"><strong>結論</strong></a></li>
+</ul>
+</li>
+</ul>
+<p>以下是跟 ChatGPT 的問答，用以了解 shortcode 用法</p>
+<h2 id="q-以下程式在-markdown-中-用途為何">Q: 以下程式在 Markdown 中 用途為何?</h2>
+<pre tabindex="0"><code>
+
+...
+
+</code></pre><h2 id="a">A:</h2>
+<p>在 Hugo 中，<code>
+` 和 `</code> 是用來插入原始 HTML 內容的短代碼（shortcode）。它的作用是允許在 Markdown 文件中嵌入原始 HTML，而不會被 Hugo 進一步處理或修改。</p>
+<hr>
+<h3 id="功能與用途"><strong>功能與用途</strong></h3>
+<ol>
+<li>
+<p><strong>嵌入原始 HTML</strong></p>
+<ul>
+<li>在 Hugo 渲染 Markdown 文件時，這些標籤之間的 HTML 內容會被直接輸出到最終的 HTML 中，而不會被 Hugo 調整或解釋。</li>
+<li>適合用於插入自定義 HTML 元素（如內嵌樣式、腳本或其他特殊標籤）。</li>
+</ul>
+</li>
+<li>
+<p><strong>保護 HTML</strong></p>
+<ul>
+<li>如果不使用 <code>rawhtml</code>，Hugo 可能會對 HTML 進行轉義或過濾，導致原始內容無法正常顯示。使用 <code>rawhtml</code> 可以避免這種情況。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="使用範例"><strong>使用範例</strong></h3>
+<h4 id="嵌入一段自定義的-html"><strong>嵌入一段自定義的 HTML</strong></h4>
+<p>假設你想在文章中插入一段自定義的表格，可以這樣使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+<table>
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+</table>
+
+</span></span></code></pre></div><p>在最終生成的 HTML 中，這段表格會被直接輸出並正確顯示。</p>
+<hr>
+<h4 id="插入-javascript"><strong>插入 JavaScript</strong></h4>
+<p>如果需要插入 JavaScript 片段：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+<script>
+  alert("Hello, world!");
+</script>
+
+</span></span></code></pre></div><p>這段腳本會直接嵌入到最終的 HTML 頁面中。</p>
+<hr>
+<h3 id="注意事項"><strong>注意事項</strong></h3>
+<ol>
+<li>
+<p><strong>安全性</strong>：</p>
+<ul>
+<li>如果你啟用了 Hugo 的 <code>safeHTML</code> 選項，只有受信任的原始 HTML 內容會被保留，其他可能被過濾。</li>
+<li>在公開網站中嵌入外部 HTML 或腳本時，需確保其來源是安全的，避免潛在的 XSS 攻擊。</li>
+</ul>
+</li>
+<li>
+<p><strong>內容處理限制</strong>：</p>
+<ul>
+<li>在 <code>rawhtml</code> 標籤內的內容不會經過 Markdown 處理。如果需要混合使用 Markdown 和 HTML，應謹慎設計。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用條件</strong>：</p>
+<ul>
+<li>某些情況下，直接寫 HTML 而不使用 <code>rawhtml</code> 也能正常渲染，但如果發現 Hugo 對 HTML 進行了意外的轉義或修改，可以嘗試使用 <code>rawhtml</code> 短代碼。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>總結來說，<code>
+` `</code> 是一種方便的工具，用於確保特定的 HTML 內容能夠不受干擾地嵌入到 Hugo 生成的頁面中。</p>
+<h2 id="q-這跟我在-shortcodesrawhtmlhtml-裡面的---inner--有何關聯">Q: 這跟我在 shortcodes/rawhtml.html 裡面的  {{ .Inner }} 有何關聯?</h2>
+<h2 id="a-1">A:</h2>
+<p><code>{{ .Inner }}</code> 是 Hugo 中 shortcodes 的內建變數之一，它與 <code>
+` 和 `</code> 之間有直接的關聯。讓我們具體解釋它們的關係及其運作原理。</p>
+<hr>
+<h3 id="shortcodesrawhtmlhtml-的作用"><strong><code>shortcodes/rawhtml.html</code> 的作用</strong></h3>
+<p>當你使用 <code>
+ ... </code> 時，Hugo 會自動查找 <strong><code>shortcodes/rawhtml.html</code></strong> 這個模板文件，並使用該模板來處理標籤內的內容。</p>
+<hr>
+<h3 id="-inner--的功能"><strong><code>{{ .Inner }}</code> 的功能</strong></h3>
+<ol>
+<li><strong><code>{{ .Inner }}</code> 表示短代碼標籤內部的內容</strong>：
+<ul>
+<li><code>{{ .Inner }}</code> 是 Hugo 中 shortcodes 的一個變數，用來代表短代碼的開閉標籤之間的所有內容。</li>
+<li>在 <code>shortcodes/rawhtml.html</code> 中，Hugo 會將 <code>
+` 和 `</code> 之間的文本（可能是 HTML）傳遞給 <code>{{ .Inner }}</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="工作原理"><strong>工作原理</strong></h3>
+<p>當你在 Markdown 文件中這樣寫：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+<table>
+  <tr><td>Example</td></tr>
+</table>
+
+</span></span></code></pre></div><p>Hugo 會執行以下步驟：</p>
+<ol>
+<li><strong>匹配模板</strong>：找到 <code>shortcodes/rawhtml.html</code> 作為對應的模板。</li>
+<li><strong>替換 <code>{{ .Inner }}</code></strong>：
+<ul>
+<li><code>{{ .Inner }}</code> 被替換為 <code>
+` 和 `</code> 之間的內容：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li><strong>生成輸出</strong>：將模板中包含的內容嵌入到最終的 HTML 中。</li>
+</ol>
+<hr>
+<h3 id="shortcodesrawhtmlhtml-文件範例"><strong><code>shortcodes/rawhtml.html</code> 文件範例</strong></h3>
+<p>如果你的 <code>shortcodes/rawhtml.html</code> 文件內容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ .Inner }}
+</span></span></code></pre></div><p>Markdown 文件的輸出結果將是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="進一步的自定義"><strong>進一步的自定義</strong></h3>
+<p>你可以在 <code>shortcodes/rawhtml.html</code> 文件中對 <code>{{ .Inner }}</code> 的內容進行包裹或處理。</p>
+<h4 id="範例包裹一層-div"><strong>範例：包裹一層 <code>&lt;div&gt;</code></strong></h4>
+<p>假設你希望自動在所有 <code>rawhtml</code> 的內容外包裹一層 <code>&lt;div&gt;</code>，可以這樣修改模板：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;raw-html-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ .Inner }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>輸出結果將是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;raw-html-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="如何應用這些關係"><strong>如何應用這些關係</strong></h3>
+<ul>
+<li>如果你不修改 <code>shortcodes/rawhtml.html</code>，Hugo 只會將 <code>{{ .Inner }}</code> 的內容直接輸出，這就是默認的 <code>rawhtml</code> 行為。</li>
+<li>如果你需要對 <code>{{ .Inner }}</code> 的內容進行包裹、過濾或添加其他 HTML 元素，可以通過修改 <code>shortcodes/rawhtml.html</code> 實現。</li>
+</ul>
+<hr>
+<h3 id="結論"><strong>結論</strong></h3>
+<ul>
+<li><code>{{ .Inner }}</code> 是 <code>rawhtml</code> 短代碼中的核心部分，它直接決定了 <code>
+ ... </code> 標籤內部的內容如何被渲染。</li>
+<li>你可以使用 <code>shortcodes/rawhtml.html</code> 文件來自定義這些內容的處理方式，例如包裹、格式化或增加額外樣式。</li>
+</ul>
+<h2 id="q-所以-rawhtml-是一個自定義的-shortcode-我也可以換個名稱嗎">Q: 所以 rawhtml 是一個自定義的 shortcode? 我也可以換個名稱嗎?</h2>
+<h2 id="a-2">A:</h2>
+<p>是的，<code>rawhtml</code> 是一個自定義的 shortcode。你完全可以修改名稱或新增一個自定義的 shortcode，來實現與 <code>rawhtml</code> 類似或完全不同的功能。</p>
+<hr>
+<h3 id="如何自定義-shortcode-名稱"><strong>如何自定義 Shortcode 名稱</strong></h3>
+<h4 id="1-修改-shortcode-名稱"><strong>1. 修改 Shortcode 名稱</strong></h4>
+<p>如果你想把 <code>rawhtml</code> 改成其他名稱，比如 <code>customhtml</code>，只需以下幾步：</p>
+<ol>
+<li>
+<p><strong>重命名文件</strong><br>
+將 <code>shortcodes/rawhtml.html</code> 文件重命名為 <code>shortcodes/customhtml.html</code>。</p>
+</li>
+<li>
+<p><strong>更新使用方式</strong><br>
+在 Markdown 文件中，使用新的名稱：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">customhtml</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Custom HTML Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">customhtml</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+</ol>
+<p>Hugo 會自動查找並渲染 <code>shortcodes/customhtml.html</code> 文件中的邏輯，作用與原來的 <code>rawhtml</code> 一樣，只是名稱改了。</p>
+<hr>
+<h4 id="2-保留原名稱並新增新功能"><strong>2. 保留原名稱並新增新功能</strong></h4>
+<p>如果你想保留 <code>rawhtml</code> 並新增一個不同功能的 shortcode，可以新建另一個文件，比如 <code>shortcodes/myhtml.html</code>。</p>
+<p>範例：<br>
+假設你的 <code>myhtml.html</code> 模板增加了一些固定的樣式包裹：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ .Inner }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>在 Markdown 文件中使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">myhtml</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;This is wrapped in custom styles.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">myhtml</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><p>輸出結果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-style&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;This is wrapped in custom styles.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="注意事項-1"><strong>注意事項</strong></h3>
+<ol>
+<li>
+<p><strong>Shortcode 名稱是靜態的</strong>：</p>
+<ul>
+<li>名稱由模板文件名確定，比如 <code>shortcodes/rawhtml.html</code>，因此不能動態命名。</li>
+</ul>
+</li>
+<li>
+<p><strong>避免命名衝突</strong>：</p>
+<ul>
+<li>如果新建的 shortcode 名稱與 Hugo 的內建 shortcode（如 <code>figure</code>、<code>highlight</code>）同名，可能會導致內建功能被覆蓋。</li>
+</ul>
+</li>
+<li>
+<p><strong>支援參數傳遞</strong>：</p>
+<ul>
+<li>自定義 shortcodes 還可以接收參數，進一步實現靈活的功能。</li>
+</ul>
+</li>
+</ol>
+<p>範例：支持一個 <code>class</code> 參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get &#34;</span><span style="color:#a6e22e">class</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ .Inner }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>Markdown 使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">myhtml</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;This paragraph has a highlight class.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">myhtml</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><p>輸出結果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;This paragraph has a highlight class.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="結論-1"><strong>結論</strong></h3>
+<ul>
+<li>是的，<code>rawhtml</code> 是自定義 shortcode，你可以隨時更改名稱（如 <code>customhtml</code>）。</li>
+<li>你也可以創建新的 shortcode，並根據需求設計其邏輯和功能。</li>
+<li>Hugo 提供了靈活的短代碼機制，方便你管理和定制模板行為。</li>
+</ul>
+<h2 id="q">Q:</h2>
+<ol>
+<li>Hugo 有哪些內建 shortcode</li>
+<li>所以呼叫 shortcode 的語法是 {{ &lt;要呼叫的 shortcode 名稱&gt; }} 是嗎?</li>
+</ol>
+<h2 id="a-3">A:</h2>
+<h3 id="1-hugo-的內建-shortcode"><strong>1. Hugo 的內建 Shortcode</strong></h3>
+<p>Hugo 提供了多種內建的短代碼（shortcode），用於處理常見需求。以下是一些常用的內建 shortcodes：</p>
+<h4 id="媒體相關"><strong>媒體相關</strong></h4>
+<ul>
+<li>
+<p><code>figure</code>：插入圖片或圖表，支持標題與自定義樣式。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><figure><img src="example.jpg"><figcaption>
+        <h4>An Example Image</h4>
+      </figcaption>
+  </figure>
+
+</span></span></code></pre></div></li>
+<li>
+<p><code>youtube</code>：嵌入 YouTube 視頻。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+  
+      
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+        ></iframe>
+      </div>
+
+</span></span></code></pre></div></li>
+<li>
+<p><code>vimeo</code>：嵌入 Vimeo 視頻。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe src="https://player.vimeo.com/video/123456789" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="內容嵌入"><strong>內容嵌入</strong></h4>
+<ul>
+<li>
+<p><code>gist</code>：嵌入 GitHub Gist。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">gist</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">gistID</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+<li>
+<p><code>tweet</code>：嵌入 Twitter 帖子。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">tweet</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1234567890&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="程式碼顯示"><strong>程式碼顯示</strong></h4>
+<ul>
+<li><code>highlight</code>：語法高亮顯示程式碼。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello, Hugo!&#34;</span>)</span></span></code></pre></div>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="數學公式"><strong>數學公式</strong></h4>
+<ul>
+<li><code>math</code>：插入數學公式（需要額外配置）。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">math</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>E = mc^2
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">math</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="短鏈接"><strong>短鏈接</strong></h4>
+<ul>
+<li><code>ref</code> 和 <code>relref</code>：生成指向其他頁面的短鏈接。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[<span style="color:#f92672">Link to another page</span>](<span style="color:#a6e22e">&amp;lcub;&amp;lcub;&lt; ref &#34;path/to/page.md&#34; &gt;&amp;rcub;&amp;rcub;</span>)
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="其他"><strong>其他</strong></h4>
+<ul>
+<li>
+<p><code>param</code>：取頁面的參數值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">param</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleParam&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+<li>
+<p><code>time</code>：顯示時間或格式化日期。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">time</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div></li>
+</ul>
+<p>完整內建短代碼列表可以參考官方文檔：<a href="https://gohugo.io/content-management/shortcodes/">Hugo Shortcodes Documentation</a></p>
+<hr>
+<h3 id="2-呼叫-shortcode-的語法"><strong>2. 呼叫 Shortcode 的語法</strong></h3>
+<h4 id="基本語法"><strong>基本語法</strong></h4>
+<p>是的，呼叫短代碼的語法如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">shortcodename</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><h4 id="標籤式-shortcode"><strong>標籤式 Shortcode</strong></h4>
+<p>如果該 shortcode 支持內部內容，需使用成對的標籤：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">shortcodename</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>內容
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">shortcodename</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><h4 id="帶參數的-shortcode"><strong>帶參數的 Shortcode</strong></h4>
+<p>短代碼可以接受參數：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">shortcodename</span> <span style="color:#a6e22e">param1</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value1&#34;</span> <span style="color:#a6e22e">param2</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value2&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><h4 id="帶內容與參數的-shortcode"><strong>帶內容與參數的 Shortcode</strong></h4>
+<p>短代碼也可以同時接收參數與內部內容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">shortcodename</span> <span style="color:#a6e22e">param1</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value1&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>內容
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">shortcodename</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><hr>
+<h3 id="3-範例對比"><strong>3. 範例對比</strong></h3>
+<h4 id="呼叫內建-shortcode"><strong>呼叫內建 Shortcode</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+</span></span></code></pre></div><h4 id="呼叫自定義-shortcode"><strong>呼叫自定義 Shortcode</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; <span style="color:#f92672">myshortcode</span> <span style="color:#a6e22e">param</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span> &gt;&amp;rcub;&amp;rcub;
+</span></span><span style="display:flex;"><span>Custom content inside.
+</span></span><span style="display:flex;"><span>&amp;lcub;&amp;lcub;&lt; /<span style="color:#f92672">myshortcode</span> &gt;&amp;rcub;&amp;rcub;
+</span></span></code></pre></div><hr>
+<h3 id="結論-2"><strong>結論</strong></h3>
+<ol>
+<li>Hugo 提供多種內建 shortcodes，如 <code>figure</code>、<code>youtube</code>、<code>highlight</code> 等，用於處理媒體嵌入、程式碼高亮等常見需求。</li>
+<li>呼叫 shortcodes 的基本語法是 <code>&amp;lcub;&amp;lcub;&lt; shortcode &gt;&amp;rcub;&amp;rcub;</code>，如果需要內部內容或參數，可以使用成對標籤並傳遞參數。</li>
+</ol>
+<h2 id="q-回到剛剛的-rawhtml-這個-shortcode其內容只有---inner-相當於內容不改動那麼跟我把-shortcode-去掉有何差別">Q: 回到剛剛的 rawhtml 這個 shortcode，其內容只有  {{ .Inner }}，相當於內容不改動，那麼跟我把 shortcode 去掉有何差別?</h2>
+<h2 id="a-4">A:</h2>
+<p>你的觀察是正確的：如果 <code>rawhtml</code> 的 shortcode 模板只包含 <code>{{ .Inner }}</code>，那麼它的作用就是直接輸出 shortcode 標籤內的內容，不進行任何修改。在這種情況下，和不使用 shortcode 將 HTML 直接放在 Markdown 文件中確實效果相同。但它還是有一些<strong>隱性功能和好處</strong>。</p>
+<hr>
+<h3 id="區別與用途"><strong>區別與用途</strong></h3>
+<h4 id="1-解析與過濾"><strong>1. 解析與過濾</strong></h4>
+<ul>
+<li>
+<p><strong>不使用 shortcode</strong>：
+如果直接在 Markdown 中插入 HTML，Hugo 會將其解釋為普通 HTML，並可能受到 Markdown 和安全過濾規則的影響。例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><p>如果安全設置（<code>markup.sanitizeHTML</code>）開啟，某些 HTML 可能會被 Hugo 過濾掉（比如 <code>&lt;script&gt;</code> 或 <code>&lt;iframe&gt;</code>）。</p>
+</li>
+<li>
+<p><strong>使用 <code>rawhtml</code> shortcode</strong>：
+短代碼內的 HTML 通常會被 Hugo 認為是“受信任的”，跳過某些安全過濾器。這意味著即使有安全限制，使用 <code>rawhtml</code> 仍能渲染完整的 HTML。</p>
+</li>
+</ul>
+<hr>
+<h4 id="2-結構化與重用"><strong>2. 結構化與重用</strong></h4>
+<p>使用 shortcode 有助於讓內容更有結構，方便重用：</p>
+<ul>
+<li>
+<p><strong>保持內容與行為分離</strong>：
+如果你在多處需要插入 HTML，通過短代碼統一管理比較方便。例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+  <table>
+    <tr><td>Example</td></tr>
+  </table>
+  
+</span></span></code></pre></div><p>如果將來需要對 <code>rawhtml</code> 的渲染行為進行修改（比如添加外層 <code>&lt;div&gt;</code>），只需更新 <code>shortcodes/rawhtml.html</code>，而不需要逐個修改 Markdown 文件。</p>
+</li>
+</ul>
+<hr>
+<h4 id="3-支援內嵌的-hugo-語法"><strong>3. 支援內嵌的 Hugo 語法</strong></h4>
+<p>在 shortcode 中，你可以混合使用 Hugo 的模板語法，這是直接插入 HTML 無法做到的：</p>
+<ul>
+<li>
+<p><strong>範例：條件渲染</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if .Get &#34;table&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;{{ .Inner }}&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>{{ else }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;{{ .Inner }}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>Markdown 文件中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+  <tr><td>Example</td></tr>
+  
+</span></span></code></pre></div><p>輸出：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="4-提升可讀性與維護性"><strong>4. 提升可讀性與維護性</strong></h4>
+<ul>
+<li><strong>簡化 Markdown 文件</strong>：
+在 Markdown 文件中使用 shortcodes，能讓長段 HTML 看起來更簡潔，容易閱讀。例如：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+  <table>
+    <tr><td>Example</td></tr>
+  </table>
+  
+</span></span></code></pre></div>比直接嵌入 HTML 更有組織性，尤其是當 HTML 複雜或多行時。</li>
+</ul>
+<hr>
+<h4 id="5-支援參數擴展"><strong>5. 支援參數擴展</strong></h4>
+<p>即使現在 <code>rawhtml</code> 只是輸出 <code>{{ .Inner }}</code>，未來可以輕鬆擴展，比如支持參數：</p>
+<ul>
+<li>
+<p>範例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get &#34;</span><span style="color:#a6e22e">class</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ .Inner }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>Markdown 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+
+  <table>
+    <tr><td>Example</td></tr>
+  </table>
+  
+</span></span></code></pre></div><p>渲染結果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table-wrapper&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;Example&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="結論-3"><strong>結論</strong></h3>
+<ol>
+<li><strong>功能一致</strong>：目前 <code>rawhtml</code> 只包含 <code>{{ .Inner }}</code>，確實和直接寫 HTML 的效果相同。</li>
+<li><strong>擴展性強</strong>：使用 shortcode 方便未來擴展行為，比如添加樣式、參數支持或邏輯處理。</li>
+<li><strong>安全與過濾</strong>：shortcode 可以避免 HTML 被過濾。</li>
+<li><strong>結構化與可維護性</strong>：shortcode 提升內容的可讀性，方便統一管理，適合需要重用的場景。</li>
+</ol>
+<p>即使在簡單的場景下，使用 shortcode 仍是一種更靈活的設計方式，特別是當你的網站規模變大時。</p>
+
+    </div>
+        
+  </div>
+</section>
+
+
+
+
+
+<script>
+  var indexURL = "http://localhost:1313/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jQuery/jquery.min.js"></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="http://localhost:1313/plugins/search/fuse.min.js"></script>
+
+<script src="http://localhost:1313/plugins/search/mark.js"></script>
+
+<script src="http://localhost:1313/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="http://localhost:1313/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
